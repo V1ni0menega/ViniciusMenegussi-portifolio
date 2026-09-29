@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Vinicius Menegussi — Desenvolvedor Fullstack em formação pela ResTIC55">
+    <title>Vinicius Menegussi | Fullstack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared/modal.css">
+</head>
+
+<body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header>
+        <nav>
+            <a href="#hero" class="logo">&gt;_ VM</a>
+            <a href="#contato" class="btn-contato" id="btn-nav-contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- ═══ SIDEBAR DE SEÇÕES (dvlpr.pro style) ═══ -->
+    <aside class="sidebar-nav" aria-label="Navegação por seções">
+        <div class="sidebar-track"></div>
+        <a href="#hero" class="sidebar-item active" data-section="hero"><span>00</span></a>
+        <a href="#sobre" class="sidebar-item" data-section="sobre"><span>01</span></a>
+        <a href="#skills" class="sidebar-item" data-section="skills"><span>02</span></a>
+        <a href="#projetos" class="sidebar-item" data-section="projetos"><span>03</span></a>
+        <a href="#contato" class="sidebar-item" data-section="contato"><span>04</span></a>
+    </aside>
+
+    <!-- Indicador de Scroll no canto inferior direito -->
+    <a href="#sobre" id="scroll-indicator" class="scroll-indicator" aria-label="Rolar para próxima seção">
+        <span class="scroll-indicator-text">SCROLL DOWN</span>
+        <span class="scroll-indicator-icon">&darr;</span>
+    </a>
+
+    <main>
+        <!-- ═══ HERO ═══ -->
+        <section id="hero">
+            <div class="hero-texto">
+                <div class="status-badge">
+                    <span class="status-ponto"></span>
+                    Disponível para novos projetos e desafios
+                </div>
+                <h1>Desenvolvedor<br><span class="accent-word">Fullstack</span><br>em formação.</h1>
+                <p class="subtitulo">Construindo interfaces modernas e back-ends robustos — módulo a módulo, sprint a
+                    sprint.</p>
+                <div class="hero-botoes">
+                    <a href="#projetos" id="btn-ver-projetos">Ver Projetos</a>
+                    <a href="./assets/curriculo.pdf" download id="btn-download-cv">Download CV</a>
+                </div>
+            </div>
+            <div class="hero-code-wrapper">
+                <div class="code-card">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="code-tab active">⚡ developer.ts</div>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="cmt">// 🌐 Vinicius Menegussi — Residente Fullstack</span>
+<span class="kw">const</span> <span class="cls">developer</span> = {
+    <span class="var">nome</span>: <span class="str">"Vinicius Menegussi"</span>,
+    <span class="var">fase</span>: <span class="str">"Residente Fullstack @ ResTIC55"</span>,
+    <span class="var">stackAtual</span>: [
+        <span class="str">"HTML5 Semântico"</span>, <span class="str">"CSS Moderno"</span>,
+        <span class="str">"JavaScript"</span>, <span class="str">"PostgreSQL"</span>, <span class="str">"Git"</span>
+    ],
+    <span class="var">aprendendo</span>: <span class="str">"Arquitetura Web &amp; Clean Code"</span>,
+    <span class="var">disponivel</span>: <span class="kw">true</span>
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SOBRE ═══ -->
+        <section id="sobre">
+            <div class="section-label">01 <span class="section-slash">// sobre</span></div>
+            <h2>Quem sou eu.</h2>
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <p class="sobre-lead">
+                        Desenvolvedor <strong>Fullstack</strong> em formação acelerada pelo programa de residência
+                        tecnológica <strong>ResTIC55 (Softex)</strong>.
+                    </p>
+                    <p>
+                        Experiência prática na construção de interfaces modernas, acessíveis e intuitivas com
+                        <strong>HTML5 semântico, CSS3 avançado e JavaScript puro</strong>, conectadas a bancos de dados
+                        relacionais <strong>PostgreSQL</strong>.
+                    </p>
+                    <p>
+                        Apaixonado por resolver problemas reais através do código — com destaque para a atuação no
+                        <strong>Portal PMA</strong> (Prefeitura de Esteio/RS), projeto que modernizou e desburocratizou
+                        o atendimento a milhares de munícipes.
+                    </p>
+                    <div class="sobre-tags">
+                        <span class="tag-pill">ResTIC55</span>
+                        <span class="tag-pill">Civic Tech</span>
+                        <span class="tag-pill">Web Standards</span>
+                        <span class="tag-pill">Clean Code</span>
+                        <span class="tag-pill">PostgreSQL</span>
+                        <span class="tag-pill">Acessibilidade</span>
+                    </div>
+                    <div class="sobre-cta">
+                        <a href="#skills" class="link-destaque">Conhecer minhas habilidades &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="sobre-cards">
+                    <div class="sobre-card">
+                        <span class="sc-badge">01 // IMPACTO REAL</span>
+                        <h4>Soluções com Propósito</h4>
+                        <p>Desenvolvimento focado em resolver dores reais de cidadãos e administrações, com foco em
+                            facilidade de uso e valor prático.</p>
+                    </div>
+                    <div class="sobre-card">
+                        <span class="sc-badge">02 // FORMAÇÃO INTENSIVA</span>
+                        <h4>Residência TIC Softex</h4>
+                        <p>Imersão contínua em arquitetura web, padrões de engenharia, clean code e trabalho
+                            colaborativo profissional.</p>
+                    </div>
+                    <div class="sobre-card">
+                        <span class="sc-badge">03 // BASE SÓLIDA</span>
+                        <h4>Fundamentos &amp; Performance</h4>
+                        <p>Domínio profundo das tecnologias nativas da web e modelagem relacional, garantindo páginas
+                            rápidas, leves e manuteníveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SKILLS ═══ -->
+        <section id="skills">
+            <div class="section-label">02 <span class="section-slash">// habilidades</span></div>
+            <h2>O que eu sei fazer.</h2>
+            <div class="skills-icons-grid">
+
+                <div class="skill-icon-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-typescript-plain colored"></i>
+                    <span>TypeScript</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-angularjs-plain colored"></i>
+                    <span>Angular</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-java-plain colored"></i>
+                    <span>Java</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-spring-plain colored"></i>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-docker-plain colored"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="skill-icon-item">
+                    <i class="devicon-linux-plain"></i>
+                    <span>Linux</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ PROJETOS (Showcase Slider dvlpr.pro) ═══ -->
+        <section id="projetos">
+            <div class="projetos-header">
+                <div>
+                    <div class="section-label">03 <span class="section-slash">// projetos</span></div>
+                    <h2>O que eu construí.</h2>
+                </div>
+                <div class="projetos-nav-top">
+                    <span class="slide-counter"><strong id="slide-current">01</strong> / <span id="slide-total">10</span></span>
+                    <div class="slider-arrows">
+                        <button class="slider-btn prev-btn" id="proj-prev" aria-label="Projeto anterior">&larr;</button>
+                        <button class="slider-btn next-btn" id="proj-next" aria-label="Próximo projeto">&rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-viewport" id="slider-viewport">
+                <div class="slider-track" id="slider-track">
+
+                    <!-- Slide 1: Portal PMA -->
+                    <article class="slide-projeto active" data-index="0" id="card-portal-pma">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.01 // CIVIC TECH &amp; FULLSTACK</div>
+                            <h3 class="slide-titulo">Portal PMA — Prefeitura de Esteio</h3>
+                            <p class="slide-descricao">
+                                Portal público que digitalizou o acesso a serviços municipais para os munícipes de
+                                Esteio/RS.
+                                Desenvolvido com arquitetura moderna e escalável, resolvendo uma dor real da
+                                administração pública e agilizando processos com eficiência.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Angular 21</li>
+                                    <li>Java</li>
+                                    <li>Spring Boot</li>
+                                    <li>Docker</li>
+                                    <li>PostgreSQL</li>
+                                    <li>REST APIs</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-pma">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Produção / Nuvem
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">pma.esteio.rs.gov.br/login</span>
+                                    <span class="mockup-live-tag">● Live</span>
+                                </div>
+                                <div class="mockup-screen">
+                                    <img src="assets/pma-preview.png" alt="Interface real do sistema ViewVerde PMA - Prefeitura Municipal de Esteio" class="mockup-img" />
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 2: ViewVerde -->
+                    <article class="slide-projeto" data-index="1" id="card-viewverde">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.02 // ESG &amp; MONITORAMENTO AMBIENTAL</div>
+                            <h3 class="slide-titulo">ViewVerde</h3>
+                            <p class="slide-descricao">
+                                Plataforma institucional de dados ambientais com 4 módulos de monitoramento sustentável.
+                                Desenvolvida com Eleventy (11ty), garantindo alta velocidade de carregamento,
+                                acessibilidade padrão WCAG AA e parceria estratégica entre Esteio, Unisinos e Dell.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Eleventy (11ty)</li>
+                                    <li>HTML Semântico</li>
+                                    <li>CSS Moderno</li>
+                                    <li>JavaScript</li>
+                                    <li>WCAG AA</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-viewverde">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Produção / Nuvem
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup is-clickable" data-external-url="https://www.viewverde.com.br/" data-project-name="ViewVerde">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">www.viewverde.com.br</span>
+                                    <span class="mockup-live-tag">● Live</span>
+                                </div>
+                                <div class="mockup-screen">
+                                    <img src="assets/viewverde-pre-view.png" alt="Interface real da plataforma ViewVerde - Plataforma Ambiental" class="mockup-img" />
+                                    <div class="mockup-screen-overlay">
+                                        <span class="mockup-overlay-badge">
+                                            <span>Acessar aplicação</span> &nearr;
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 3: Painel Público Esteio -->
+                    <article class="slide-projeto" data-index="2" id="card-painel-esteio">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.03 // TRANSPARÊNCIA PÚBLICA</div>
+                            <h3 class="slide-titulo">Painel Público — Prefeitura de Esteio</h3>
+                            <p class="slide-descricao">
+                                Painel de transparência pública com dados abertos do município de Esteio.
+                                Desenvolvido com Eleventy (11ty), garantindo alta velocidade de carregamento,
+                                acessibilidade padrão WCAG AA e parceria estratégica entre Esteio, Unisinos e Dell.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Eleventy (11ty)</li>
+                                    <li>HTML Semântico</li>
+                                    <li>CSS Moderno</li>
+                                    <li>JavaScript</li>
+                                    <li>WCAG AA</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-painel">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Produção / Nuvem
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup is-clickable" data-external-url="https://painel.viewverde.com.br/" data-project-name="Painel Público Esteio">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">painel.viewverde.com.br</span>
+                                    <span class="mockup-live-tag">● Live</span>
+                                </div>
+                                <div class="mockup-screen">
+                                    <img src="assets/painel-preview.png" alt="Interface real do Painel Público - Prefeitura de Esteio" class="mockup-img" />
+                                    <div class="mockup-screen-overlay">
+                                        <span class="mockup-overlay-badge">
+                                            <span>Acessar aplicação</span> &nearr;
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 4: API Gateway & Microsserviços -->
+                    <article class="slide-projeto" data-index="3" id="card-api-gateway">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.04 // BACKEND &amp; MICROSSERVIÇOS</div>
+                            <h3 class="slide-titulo">Auth &amp; API Gateway Hub</h3>
+                            <p class="slide-descricao">
+                                Gateway centralizado para autenticação distribuída, rate limiting e roteamento dinâmico de microsserviços.
+                                Implementa segurança corporativa com tokens JWT assimétricos, observabilidade e cache em Redis de baixa latência.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Java</li>
+                                    <li>Spring Cloud</li>
+                                    <li>Redis</li>
+                                    <li>Docker</li>
+                                    <li>JWT</li>
+                                    <li>OpenAPI</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-gateway">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Arquitetura Cloud
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">api.menegussi.dev/v1/health</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● 99.98% Uptime</div>
+                                    <h4>Microsserviços &amp; Rate Limiting</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">&lt; 14ms</span>
+                                            <span class="stat-txt">Latência Média</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">JWT + RSA</span>
+                                            <span class="stat-txt">Segurança</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Redis</span>
+                                            <span class="stat-txt">Cache Layer</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; Spring Gateway &bull; Dockerized</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 5: GitQuest -->
+                    <article class="slide-projeto" data-index="4" id="card-gitquest">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.05 // GAMIFICAÇÃO &amp; DEVREL</div>
+                            <h3 class="slide-titulo">GitQuest — RPG do Git</h3>
+                            <p class="slide-descricao">
+                                Plataforma gamificada interativa para capacitação em versionamento de software.
+                                Ensina comandos avançados de Git (rebase interativo, cherry-pick, merge conflict resolution) através de missões com validação em tempo real.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>TypeScript</li>
+                                    <li>Node.js</li>
+                                    <li>PostgreSQL</li>
+                                    <li>Docker</li>
+                                    <li>Prisma</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-gitquest">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Em Desenvolvimento
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">gitquest.app/play</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Gamified Learning</div>
+                                    <h4>Simulador Interativo de Git</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">12+</span>
+                                            <span class="stat-txt">Missões RPG</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">CLI</span>
+                                            <span class="stat-txt">Terminal Virtual</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Badges</span>
+                                            <span class="stat-txt">Conquistas Dev</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; git commit -m &quot;feat: complete-quest&quot;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 6: EcoMonitor IoT -->
+                    <article class="slide-projeto" data-index="5" id="card-ecomonitor">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.06 // IOT &amp; TELEMETRIA</div>
+                            <h3 class="slide-titulo">EcoMonitor — Sensores em Tempo Real</h3>
+                            <p class="slide-descricao">
+                                Dashboard de telemetria contínua com streaming de dados via WebSockets para sensores ambientais (qualidade do ar, temperatura e umidade).
+                                Alertas automáticos para limiares críticos de poluição e visualização gráfica com Chart.js.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Node.js</li>
+                                    <li>WebSockets</li>
+                                    <li>MQTT</li>
+                                    <li>MongoDB</li>
+                                    <li>Chart.js</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-ecomonitor">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Telemetria Ativa
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">ecomonitor.io/telemetry</span>
+                                    <span class="mockup-live-tag">● Stream</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Streaming WebSocket</div>
+                                    <h4>Telemetria &amp; Sensores IoT</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">500ms</span>
+                                            <span class="stat-txt">Taxa Refresh</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">MQTT</span>
+                                            <span class="stat-txt">Protocolo Broker</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Alertas</span>
+                                            <span class="stat-txt">Eventos Push</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; ws://ecomonitor/sensors/live</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 7: Smart Esteio -->
+                    <article class="slide-projeto" data-index="6" id="card-smart-esteio">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.07 // URBAN TECH &amp; SERVIÇOS</div>
+                            <h3 class="slide-titulo">Smart Esteio — Zeladoria Urbana</h3>
+                            <p class="slide-descricao">
+                                Sistema colaborativo para registro e acompanhamento de demandas urbanas (iluminação, vias públicas, saneamento).
+                                Integração com mapas interativos, triagem automatizada por secretaria e feedback transparente ao munícipe.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>React</li>
+                                    <li>TypeScript</li>
+                                    <li>Leaflet Maps</li>
+                                    <li>Spring Boot</li>
+                                    <li>PostgreSQL</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-smartesteio">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Protótipo
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">smart.esteio.rs.gov.br</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Mapeamento Ativo</div>
+                                    <h4>Geolocalização &amp; Demandas</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">GIS</span>
+                                            <span class="stat-txt">Leaflet Engine</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">SLA</span>
+                                            <span class="stat-txt">Triagem Automática</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">PWA</span>
+                                            <span class="stat-txt">Mobile Ready</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; Prefeitura de Esteio &bull; Zeladoria</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 8: Pipeline CI/CD & Deploy -->
+                    <article class="slide-projeto" data-index="7" id="card-pipeline-devops">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.08 // CLOUD &amp; DEVOPS</div>
+                            <h3 class="slide-titulo">Pipeline CI/CD &amp; Deploy Automatizado</h3>
+                            <p class="slide-descricao">
+                                Esteira de automação com GitHub Actions para validação estática de código (linters, SonarQube),
+                                execução de testes automatizados e deploy contínuo em containers Docker com Nginx reverse proxy.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Docker</li>
+                                    <li>GitHub Actions</li>
+                                    <li>Linux</li>
+                                    <li>Nginx</li>
+                                    <li>Shell Script</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-pipeline">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> CI/CD Passed
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">ci.menegussi.dev/pipelines/build</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Build: Passing</div>
+                                    <h4>Esteira Automatizada de Deploy</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">100%</span>
+                                            <span class="stat-txt">Testes Unitários</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Docker</span>
+                                            <span class="stat-txt">Container Image</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">&lt; 2min</span>
+                                            <span class="stat-txt">Tempo de Build</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; docker compose up -d --build</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 9: Design System -->
+                    <article class="slide-projeto" data-index="8" id="card-design-system">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.09 // DESIGN SYSTEM &amp; UI/UX</div>
+                            <h3 class="slide-titulo">DVLPR Design System &amp; Tokens</h3>
+                            <p class="slide-descricao">
+                                Biblioteca de componentes acessíveis e tokens visuais (cores, espaçamentos, tipografia, micro-interações)
+                                focada em alta performance, WCAG AA e consistência visual para aplicações web modernas.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Vanilla CSS</li>
+                                    <li>HTML5</li>
+                                    <li>Web Components</li>
+                                    <li>WCAG AA</li>
+                                    <li>Storybook</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-ds">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> UI System
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">ds.dvlpr.pro/components</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● WCAG AA Compliant</div>
+                                    <h4>Tokens &amp; Componentes Modulares</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">30+</span>
+                                            <span class="stat-txt">Componentes</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">0 dep</span>
+                                            <span class="stat-txt">Vanilla Puro</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Tokens</span>
+                                            <span class="stat-txt">HSL Tailored</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; :root { --cor-accent: #8b5cf6; }</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 10: Data Analytics & BI -->
+                    <article class="slide-projeto" data-index="9" id="card-data-analytics">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.10 // DATA ANALYTICS &amp; BI</div>
+                            <h3 class="slide-titulo">Painel de Indicadores &amp; Insights</h3>
+                            <p class="slide-descricao">
+                                Plataforma analítica para agregação e cruzamento de dados públicos municipais,
+                                gerando relatórios gerenciais automatizados e gráficos interativos para tomada de decisão baseada em dados.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>FastAPI</li>
+                                    <li>Pandas</li>
+                                    <li>PostgreSQL</li>
+                                    <li>Chart.js</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                                    class="btn-projeto-primary" id="link-github-analytics">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Dados Públicos
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">analytics.esteio.gov.br</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Data Pipeline</div>
+                                    <h4>ETL &amp; Visualização Analítica</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">FastAPI</span>
+                                            <span class="stat-txt">High Speed API</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">Pandas</span>
+                                            <span class="stat-txt">ETL Pipeline</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">BI</span>
+                                            <span class="stat-txt">Insights Cívicos</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; python -m analytics.pipeline</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Dots de navegação inferior -->
+            <div class="slider-dots">
+                <button class="dot-indicator active" data-index="0" aria-label="Ir para projeto 1"></button>
+                <button class="dot-indicator" data-index="1" aria-label="Ir para projeto 2"></button>
+                <button class="dot-indicator" data-index="2" aria-label="Ir para projeto 3"></button>
+                <button class="dot-indicator" data-index="3" aria-label="Ir para projeto 4"></button>
+                <button class="dot-indicator" data-index="4" aria-label="Ir para projeto 5"></button>
+                <button class="dot-indicator" data-index="5" aria-label="Ir para projeto 6"></button>
+                <button class="dot-indicator" data-index="6" aria-label="Ir para projeto 7"></button>
+                <button class="dot-indicator" data-index="7" aria-label="Ir para projeto 8"></button>
+                <button class="dot-indicator" data-index="8" aria-label="Ir para projeto 9"></button>
+                <button class="dot-indicator" data-index="9" aria-label="Ir para projeto 10"></button>
+            </div>
+        </section>
+
+        <!-- ═══ CONTATO ═══ -->
+        <section id="contato">
+            <div class="contato-conteudo">
+                <div class="section-label">04 <span class="section-slash">// contato</span></div>
+                <h2>Vamos conversar.</h2>
+                <p class="contato-subtitulo">Aberto a oportunidades, conexões técnicas e novos desafios de
+                    desenvolvimento.</p>
+                <address>
+                    <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
+                        id="link-github-contato">
+                        <i class="devicon-github-original"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer"
+                        id="link-linkedin">
+                        <i class="devicon-linkedin-plain"></i> LinkedIn
+                    </a>
+                    <a href="mailto:[EMAIL_ADDRESS]" id="link-email" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-google-plain"></i> [EMAIL_ADDRESS]
+                    </a>
+                </address>
+            </div>
+            <div class="contato-footer">
+                <p>© 2026 Vinicius Menegussi &mdash; Feito com HTML, CSS &amp; JS puro.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══ MODAL DE CONFIRMAÇÃO DE LINK EXTERNO ═══ -->
+    <div id="modal-link-externo" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-ext-titulo" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-card">
+            <button type="button" class="modal-btn-close" id="modal-ext-fechar" data-modal-close aria-label="Fechar modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon-badge">
+                    <span class="modal-icon-symbol">↗</span>
+                </div>
+                <div>
+                    <h3 id="modal-ext-titulo" class="modal-titulo">Aviso de Redirecionamento</h3>
+                    <p class="modal-subtitulo" id="modal-ext-subtitulo">Você está prestes a abrir uma aba externa</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="modal-mensagem">
+                    Você será redirecionado para a aplicação em ambiente de produção:
+                </p>
+                <div class="modal-url-box">
+                    <span class="modal-url-icon">🌐</span>
+                    <span class="modal-url-texto" id="modal-ext-url-display">https://www.viewverde.com.br/</span>
+                </div>
+                <p class="modal-alerta">
+                    O link abrirá em uma nova aba mantendo seu progresso no portfólio. Tem certeza que deseja continuar?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal-cancelar" id="modal-ext-btn-cancelar" data-modal-close>Cancelar</button>
+                <button type="button" class="btn-modal-confirmar" id="modal-ext-btn-confirmar">
+                    Continuar para o site &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared/modal.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
