@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shared/modal.css">
+    <link rel="stylesheet" href="shared/tech-icons.css">
 </head>
 
 <body>
@@ -207,7 +208,8 @@
                     <h2>O que eu construí.</h2>
                 </div>
                 <div class="projetos-nav-top">
-                    <span class="slide-counter"><strong id="slide-current">01</strong> / <span id="slide-total">10</span></span>
+                    <span class="slide-counter"><strong id="slide-current">01</strong> / <span
+                            id="slide-total">10</span></span>
                     <div class="slider-arrows">
                         <button class="slider-btn prev-btn" id="proj-prev" aria-label="Projeto anterior">&larr;</button>
                         <button class="slider-btn next-btn" id="proj-next" aria-label="Próximo projeto">&rarr;</button>
@@ -232,12 +234,30 @@
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Angular 21</li>
-                                    <li>Java</li>
-                                    <li>Spring Boot</li>
-                                    <li>Docker</li>
-                                    <li>PostgreSQL</li>
-                                    <li>REST APIs</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>Angular</li>
+                                        <li>Angular Material</li>
+                                        <li>Google icons</li>
+                                        <li>TypeScript</li>
+                                        <li>TailwindCSS</li>
+                                        <li>HTML Semântico</li>
+                                        <li>CSS Moderno</li>
+                                        <li>WCAG AA</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend</span>
+                                        <li>Java 25</li>
+                                        <li>Spring Boot 3</li>
+                                        <li>Docker</li>
+                                        <li>PostgreSQL</li>
+                                        <li>REST APIs</li>
+                                        <li>JPA</li>
+                                        <li>Hibernate</li>
+                                        <li>JUnit 5</li>
+                                        <li>Mockito</li>
+                                        <li>Swagger</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -262,7 +282,12 @@
                                     <span class="mockup-live-tag">● Live</span>
                                 </div>
                                 <div class="mockup-screen">
-                                    <img src="assets/pma-preview.png" alt="Interface real do sistema ViewVerde PMA - Prefeitura Municipal de Esteio" class="mockup-img" />
+                                    <picture>
+                                        <source srcset="assets/pma-preview.webp" type="image/webp">
+                                        <img src="assets/pma-preview.png"
+                                            alt="Interface real do sistema ViewVerde PMA - Prefeitura Municipal de Esteio"
+                                            class="mockup-img" loading="eager" decoding="async" width="1024" height="495" />
+                                    </picture>
                                 </div>
                             </div>
                         </div>
@@ -281,11 +306,24 @@
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Eleventy (11ty)</li>
-                                    <li>HTML Semântico</li>
-                                    <li>CSS Moderno</li>
-                                    <li>JavaScript</li>
-                                    <li>WCAG AA</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>Angular 21</li>
+                                        <li>TypeScript</li>
+                                        <li>TailwindCSS</li>
+                                        <li>HTML Semântico</li>
+                                        <li>CSS Moderno</li>
+                                        <li>WCAG AA</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend</span>
+                                        <li>Java 25</li>
+                                        <li>Spring Boot 3</li>
+                                        <li>PostgreSQL</li>
+                                        <li>Docker</li>
+                                        <li>REST APIs</li>
+                                        <li>Spring Security</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -299,7 +337,8 @@
                             </div>
                         </div>
                         <div class="slide-preview">
-                            <div class="preview-mockup is-clickable" data-external-url="https://www.viewverde.com.br/" data-project-name="ViewVerde">
+                            <div class="preview-mockup is-clickable" data-external-url="https://www.viewverde.com.br/"
+                                data-project-name="ViewVerde">
                                 <div class="mockup-bar">
                                     <div class="mockup-dots">
                                         <span class="m-dot dot-red"></span>
@@ -310,7 +349,12 @@
                                     <span class="mockup-live-tag">● Live</span>
                                 </div>
                                 <div class="mockup-screen">
-                                    <img src="assets/viewverde-pre-view.png" alt="Interface real da plataforma ViewVerde - Plataforma Ambiental" class="mockup-img" />
+                                    <picture>
+                                        <source srcset="assets/viewverde-pre-view.webp" type="image/webp">
+                                        <img src="assets/viewverde-pre-view.png"
+                                            alt="Interface real da plataforma ViewVerde - Plataforma Ambiental"
+                                            class="mockup-img" loading="lazy" decoding="async" width="1348" height="655" />
+                                    </picture>
                                     <div class="mockup-screen-overlay">
                                         <span class="mockup-overlay-badge">
                                             <span>Acessar aplicação</span> &nearr;
@@ -328,17 +372,28 @@
                             <h3 class="slide-titulo">Painel Público — Prefeitura de Esteio</h3>
                             <p class="slide-descricao">
                                 Painel de transparência pública com dados abertos do município de Esteio.
-                                Desenvolvido com Eleventy (11ty), garantindo alta velocidade de carregamento,
+                                Desenvolvida com Eleventy (11ty), garantindo alta velocidade de carregamento,
                                 acessibilidade padrão WCAG AA e parceria estratégica entre Esteio, Unisinos e Dell.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Eleventy (11ty)</li>
-                                    <li>HTML Semântico</li>
-                                    <li>CSS Moderno</li>
-                                    <li>JavaScript</li>
-                                    <li>WCAG AA</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>Angular 21</li>
+                                        <li>Angular Material</li>
+                                        <li>Google icons</li>
+                                        <li>TypeScript</li>
+                                        <li>TailwindCSS</li>
+                                        <li>WCAG AA</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend &amp; Dados</span>
+                                        <li>Eleventy (11ty)</li>
+                                        <li>Node.js</li>
+                                        <li>Dados Abertos</li>
+                                        <li>REST APIs</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -352,7 +407,9 @@
                             </div>
                         </div>
                         <div class="slide-preview">
-                            <div class="preview-mockup is-clickable" data-external-url="https://painel.viewverde.com.br/" data-project-name="Painel Público Esteio">
+                            <div class="preview-mockup is-clickable"
+                                data-external-url="https://painel.viewverde.com.br/"
+                                data-project-name="Painel Público Esteio">
                                 <div class="mockup-bar">
                                     <div class="mockup-dots">
                                         <span class="m-dot dot-red"></span>
@@ -363,7 +420,12 @@
                                     <span class="mockup-live-tag">● Live</span>
                                 </div>
                                 <div class="mockup-screen">
-                                    <img src="assets/painel-preview.png" alt="Interface real do Painel Público - Prefeitura de Esteio" class="mockup-img" />
+                                    <picture>
+                                        <source srcset="assets/painel-preview.webp" type="image/webp">
+                                        <img src="assets/painel-preview.png"
+                                            alt="Interface real do Painel Público - Prefeitura de Esteio"
+                                            class="mockup-img" loading="lazy" decoding="async" width="1350" height="657" />
+                                    </picture>
                                     <div class="mockup-screen-overlay">
                                         <span class="mockup-overlay-badge">
                                             <span>Acessar aplicação</span> &nearr;
@@ -380,18 +442,29 @@
                             <div class="card-numero">P.04 // BACKEND &amp; MICROSSERVIÇOS</div>
                             <h3 class="slide-titulo">Auth &amp; API Gateway Hub</h3>
                             <p class="slide-descricao">
-                                Gateway centralizado para autenticação distribuída, rate limiting e roteamento dinâmico de microsserviços.
-                                Implementa segurança corporativa com tokens JWT assimétricos, observabilidade e cache em Redis de baixa latência.
+                                Gateway centralizado para autenticação distribuída, rate limiting e roteamento dinâmico
+                                de microsserviços.
+                                Implementa segurança corporativa com tokens JWT assimétricos, observabilidade e cache em
+                                Redis de baixa latência.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Java</li>
-                                    <li>Spring Cloud</li>
-                                    <li>Redis</li>
-                                    <li>Docker</li>
-                                    <li>JWT</li>
-                                    <li>OpenAPI</li>
+                                    <div class="stacks-back">
+                                        <span>Backend</span>
+                                        <li>Java 25</li>
+                                        <li>Spring Cloud Gateway</li>
+                                        <li>Redis Cache</li>
+                                        <li>JWT + RSA</li>
+                                        <li>OpenAPI / Swagger</li>
+                                    </div>
+                                    <div class="stacks-front">
+                                        <span>Infra &amp; Cloud</span>
+                                        <li>Docker</li>
+                                        <li>Rate Limiting</li>
+                                        <li>Prometheus</li>
+                                        <li>Nginx</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -444,16 +517,27 @@
                             <h3 class="slide-titulo">GitQuest — RPG do Git</h3>
                             <p class="slide-descricao">
                                 Plataforma gamificada interativa para capacitação em versionamento de software.
-                                Ensina comandos avançados de Git (rebase interativo, cherry-pick, merge conflict resolution) através de missões com validação em tempo real.
+                                Ensina comandos avançados de Git (rebase interativo, cherry-pick, merge conflict
+                                resolution) através de missões com validação em tempo real.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>TypeScript</li>
-                                    <li>Node.js</li>
-                                    <li>PostgreSQL</li>
-                                    <li>Docker</li>
-                                    <li>Prisma</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>TypeScript</li>
+                                        <li>React</li>
+                                        <li>Canvas API</li>
+                                        <li>TailwindCSS</li>
+                                        <li>Terminal UI</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend</span>
+                                        <li>Node.js</li>
+                                        <li>PostgreSQL</li>
+                                        <li>Prisma ORM</li>
+                                        <li>Docker</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -493,7 +577,8 @@
                                             <span class="stat-txt">Conquistas Dev</span>
                                         </div>
                                     </div>
-                                    <div class="mockup-code-line">&gt; git commit -m &quot;feat: complete-quest&quot;</div>
+                                    <div class="mockup-code-line">&gt; git commit -m &quot;feat: complete-quest&quot;
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -505,17 +590,29 @@
                             <div class="card-numero">P.06 // IOT &amp; TELEMETRIA</div>
                             <h3 class="slide-titulo">EcoMonitor — Sensores em Tempo Real</h3>
                             <p class="slide-descricao">
-                                Dashboard de telemetria contínua com streaming de dados via WebSockets para sensores ambientais (qualidade do ar, temperatura e umidade).
-                                Alertas automáticos para limiares críticos de poluição e visualização gráfica com Chart.js.
+                                Dashboard de telemetria contínua com streaming de dados via WebSockets para sensores
+                                ambientais (qualidade do ar, temperatura e umidade).
+                                Alertas automáticos para limiares críticos de poluição e visualização gráfica com
+                                Chart.js.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Node.js</li>
-                                    <li>WebSockets</li>
-                                    <li>MQTT</li>
-                                    <li>MongoDB</li>
-                                    <li>Chart.js</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>Chart.js</li>
+                                        <li>TypeScript</li>
+                                        <li>TailwindCSS</li>
+                                        <li>WebSocket Client</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>IoT &amp; Backend</span>
+                                        <li>Node.js</li>
+                                        <li>MQTT Broker</li>
+                                        <li>MongoDB</li>
+                                        <li>WebSocket Server</li>
+                                        <li>Docker</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -568,17 +665,28 @@
                             <div class="card-numero">P.07 // URBAN TECH &amp; SERVIÇOS</div>
                             <h3 class="slide-titulo">Smart Esteio — Zeladoria Urbana</h3>
                             <p class="slide-descricao">
-                                Sistema colaborativo para registro e acompanhamento de demandas urbanas (iluminação, vias públicas, saneamento).
-                                Integração com mapas interativos, triagem automatizada por secretaria e feedback transparente ao munícipe.
+                                Sistema colaborativo para registro e acompanhamento de demandas urbanas (iluminação,
+                                vias públicas, saneamento).
+                                Integração com mapas interativos, triagem automatizada por secretaria e feedback
+                                transparente ao munícipe.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>React</li>
-                                    <li>TypeScript</li>
-                                    <li>Leaflet Maps</li>
-                                    <li>Spring Boot</li>
-                                    <li>PostgreSQL</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>React</li>
+                                        <li>TypeScript</li>
+                                        <li>Leaflet GIS</li>
+                                        <li>TailwindCSS</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend</span>
+                                        <li>Spring Boot 3</li>
+                                        <li>PostgreSQL / PostGIS</li>
+                                        <li>REST APIs</li>
+                                        <li>Docker</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -630,17 +738,28 @@
                             <div class="card-numero">P.08 // CLOUD &amp; DEVOPS</div>
                             <h3 class="slide-titulo">Pipeline CI/CD &amp; Deploy Automatizado</h3>
                             <p class="slide-descricao">
-                                Esteira de automação com GitHub Actions para validação estática de código (linters, SonarQube),
-                                execução de testes automatizados e deploy contínuo em containers Docker com Nginx reverse proxy.
+                                Esteira de automação com GitHub Actions para validação estática de código (linters,
+                                SonarQube),
+                                execução de testes automatizados e deploy contínuo em containers Docker com Nginx
+                                reverse proxy.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Docker</li>
-                                    <li>GitHub Actions</li>
-                                    <li>Linux</li>
-                                    <li>Nginx</li>
-                                    <li>Shell Script</li>
+                                    <div class="stacks-front">
+                                        <span>CI / CD</span>
+                                        <li>GitHub Actions</li>
+                                        <li>SonarQube</li>
+                                        <li>Linters</li>
+                                        <li>Testes Automatizados</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Infra &amp; Cloud</span>
+                                        <li>Docker</li>
+                                        <li>Linux</li>
+                                        <li>Nginx Proxy</li>
+                                        <li>Shell Script</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -692,17 +811,27 @@
                             <div class="card-numero">P.09 // DESIGN SYSTEM &amp; UI/UX</div>
                             <h3 class="slide-titulo">DVLPR Design System &amp; Tokens</h3>
                             <p class="slide-descricao">
-                                Biblioteca de componentes acessíveis e tokens visuais (cores, espaçamentos, tipografia, micro-interações)
+                                Biblioteca de componentes acessíveis e tokens visuais (cores, espaçamentos, tipografia,
+                                micro-interações)
                                 focada em alta performance, WCAG AA e consistência visual para aplicações web modernas.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Vanilla CSS</li>
-                                    <li>HTML5</li>
-                                    <li>Web Components</li>
-                                    <li>WCAG AA</li>
-                                    <li>Storybook</li>
+                                    <div class="stacks-front">
+                                        <span>Design Tokens</span>
+                                        <li>Vanilla CSS</li>
+                                        <li>CSS Custom Properties</li>
+                                        <li>HSL Colors</li>
+                                        <li>Fluid Clamp()</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Componentes UI</span>
+                                        <li>Web Components</li>
+                                        <li>HTML5 Semântico</li>
+                                        <li>WCAG AA</li>
+                                        <li>Storybook</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -755,17 +884,26 @@
                             <h3 class="slide-titulo">Painel de Indicadores &amp; Insights</h3>
                             <p class="slide-descricao">
                                 Plataforma analítica para agregação e cruzamento de dados públicos municipais,
-                                gerando relatórios gerenciais automatizados e gráficos interativos para tomada de decisão baseada em dados.
+                                gerando relatórios gerenciais automatizados e gráficos interativos para tomada de
+                                decisão baseada em dados.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
-                                    <li>Python</li>
-                                    <li>FastAPI</li>
-                                    <li>Pandas</li>
-                                    <li>PostgreSQL</li>
-                                    <li>Chart.js</li>
-                                    <li>Docker</li>
+                                    <div class="stacks-front">
+                                        <span>Frontend &amp; BI</span>
+                                        <li>Chart.js</li>
+                                        <li>Dashboard Grid</li>
+                                        <li>Exportação PDF/CSV</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Data Pipeline</span>
+                                        <li>Python</li>
+                                        <li>FastAPI</li>
+                                        <li>Pandas ETL</li>
+                                        <li>PostgreSQL</li>
+                                        <li>Docker</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
@@ -841,15 +979,16 @@
                         id="link-github-contato">
                         <i class="devicon-github-original"></i> GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer"
-                        id="link-linkedin">
+                    <a href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank"
+                        rel="noopener noreferrer" id="link-linkedin">
                         <i class="devicon-linkedin-plain"></i> LinkedIn
                     </a>
                     <div class="email-container">
                         <a href="mailto:vmenegussi08@gmail.com" id="link-email" title="Enviar e-mail">
                             <i class="devicon-google-plain"></i> vmenegussi08@gmail.com
                         </a>
-                        <button type="button" class="btn-copiar-email" id="btn-copiar-email" title="Copiar e-mail" aria-label="Copiar endereço de e-mail">
+                        <button type="button" class="btn-copiar-email" id="btn-copiar-email" title="Copiar e-mail"
+                            aria-label="Copiar endereço de e-mail">
                             <span class="copiar-icon" id="copiar-icon">📋</span>
                             <span class="copiar-texto" id="copiar-texto">Copiar</span>
                         </button>
@@ -863,10 +1002,12 @@
     </main>
 
     <!-- ═══ MODAL DE CONFIRMAÇÃO DE LINK EXTERNO ═══ -->
-    <div id="modal-link-externo" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-ext-titulo" aria-hidden="true">
+    <div id="modal-link-externo" class="modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="modal-ext-titulo" aria-hidden="true">
         <div class="modal-backdrop" data-modal-close></div>
         <div class="modal-card">
-            <button type="button" class="modal-btn-close" id="modal-ext-fechar" data-modal-close aria-label="Fechar modal">&times;</button>
+            <button type="button" class="modal-btn-close" id="modal-ext-fechar" data-modal-close
+                aria-label="Fechar modal">&times;</button>
             <div class="modal-header">
                 <div class="modal-icon-badge">
                     <span class="modal-icon-symbol">↗</span>
@@ -889,7 +1030,8 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn-modal-cancelar" id="modal-ext-btn-cancelar" data-modal-close>Cancelar</button>
+                <button type="button" class="btn-modal-cancelar" id="modal-ext-btn-cancelar"
+                    data-modal-close>Cancelar</button>
                 <button type="button" class="btn-modal-confirmar" id="modal-ext-btn-confirmar">
                     Continuar para o site &rarr;
                 </button>
@@ -898,6 +1040,8 @@
     </div>
 
     <script src="shared/modal.js"></script>
+    <script src="shared/tech-icons.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
