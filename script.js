@@ -258,3 +258,56 @@ document.addEventListener('mousemove', (e) => {
 // Inicialização
 sincronizarEstadoNavegacao();
 
+// ─── 4. Cópia Rápida de E-mail com Feedback Visual ───
+const btnCopiarEmail = document.getElementById('btn-copiar-email');
+const emailVinicius = 'vmenegussi08@gmail.com';
+
+function copiarEmailParaClipboard(e) {
+    if (e) e.preventDefault();
+
+    function darFeedback() {
+        if (!btnCopiarEmail) return;
+        const textoEl = document.getElementById('copiar-texto');
+        const iconEl = document.getElementById('copiar-icon');
+
+        btnCopiarEmail.classList.add('copiado');
+        if (textoEl) textoEl.textContent = 'Copiado!';
+        if (iconEl) iconEl.textContent = '✓';
+
+        setTimeout(() => {
+            btnCopiarEmail.classList.remove('copiado');
+            if (textoEl) textoEl.textContent = 'Copiar';
+            if (iconEl) iconEl.textContent = '📋';
+        }, 2200);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(emailVinicius)
+            .then(darFeedback)
+            .catch(() => fallbackCopiar(emailVinicius, darFeedback));
+    } else {
+        fallbackCopiar(emailVinicius, darFeedback);
+    }
+}
+
+function fallbackCopiar(texto, callback) {
+    const tempInput = document.createElement('textarea');
+    tempInput.value = texto;
+    tempInput.style.position = 'fixed';
+    tempInput.style.left = '-9999px';
+    tempInput.style.top = '-9999px';
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+        document.execCommand('copy');
+        if (typeof callback === 'function') callback();
+    } catch (err) {
+        console.error('Falha ao copiar:', err);
+    }
+    document.body.removeChild(tempInput);
+}
+
+if (btnCopiarEmail) {
+    btnCopiarEmail.addEventListener('click', copiarEmailParaClipboard);
+}
+
