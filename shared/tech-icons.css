@@ -1,0 +1,22 @@
+/**
+ * ═══════════════════════════════════════════════════════════
+ * SHARED: TECH ICONS STYLING (Devicon Auto-Inherit)
+ * Residencia Fullstack — Frontend Challenge
+ * ═══════════════════════════════════════════════════════════
+ */
+
+.slide-stack li i,
+[data-tech] i,
+.tech-pill i {
+    font-size: 0.82rem;
+    margin-right: 4px;
+    vertical-align: -1.5px;
+    display: inline-block;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.slide-stack li:hover i,
+[data-tech]:hover i {
+    transform: scale(1.15);
+}
