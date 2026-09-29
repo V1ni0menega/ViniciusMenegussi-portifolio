@@ -260,10 +260,13 @@ sincronizarEstadoNavegacao();
 
 // ─── 4. Cópia Rápida de E-mail com Feedback Visual ───
 const btnCopiarEmail = document.getElementById('btn-copiar-email');
+const linkEmail = document.getElementById('link-email');
 const emailVinicius = 'vmenegussi08@gmail.com';
 
 function copiarEmailParaClipboard(e) {
-    if (e) e.preventDefault();
+    if (e && e.target && e.target.closest('#btn-copiar-email')) {
+        e.preventDefault();
+    }
 
     function darFeedback() {
         if (!btnCopiarEmail) return;
@@ -309,5 +312,11 @@ function fallbackCopiar(texto, callback) {
 
 if (btnCopiarEmail) {
     btnCopiarEmail.addEventListener('click', copiarEmailParaClipboard);
+}
+
+if (linkEmail) {
+    linkEmail.addEventListener('click', () => {
+        copiarEmailParaClipboard();
+    });
 }
 
