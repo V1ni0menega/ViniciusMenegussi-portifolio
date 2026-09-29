@@ -41,7 +41,14 @@
 ═══════════════════════════════════ */
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+
+/* Scroll-snap habilitado apenas em desktop com cursor e hover */
+@media (min-width: 961px) and (hover: hover) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
 }
 
 body {
@@ -53,6 +60,8 @@ body {
     font-family: var(--fonte-principal);
     font-size: 1rem;
     line-height: 1.7;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ═══════════════════════════════════
@@ -726,8 +735,13 @@ section h2 {
 .slider-track {
     display: flex;
     width: 100%;
-    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* Slide individual */
@@ -744,19 +758,20 @@ section h2 {
     border-top: 2px solid var(--cor-accent);
     border-radius: var(--radius-lg);
     box-sizing: border-box;
+    contain: content;
 }
 
-/* Efeito de transição de conteúdo: "deslizar para o lado e aparecer" */
+/* Efeito de transição de conteúdo suave */
 .slide-conteudo, .slide-preview {
-    opacity: 0.3;
-    transform: translateX(20px);
-    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.4;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .slide-projeto.active .slide-conteudo,
 .slide-projeto.active .slide-preview {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .slide-conteudo {
@@ -798,19 +813,91 @@ section h2 {
 .slide-stack ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Quando é uma lista simples sem categorias */
+.slide-stack ul:not(:has(.stacks-front)):not(:has(.stacks-back)) {
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 0.4rem;
 }
 
-.slide-stack ul li {
-    font-size: 0.72rem;
-    font-weight: 500;
+/* Categorias Frontend & Backend */
+.stacks-front,
+.stacks-back {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.stacks-front > span,
+.stacks-back > span {
+    font-size: 0.64rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.18rem 0.5rem;
+    border-radius: 4px;
+    font-family: "Fira Code", monospace;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    margin-right: 0.2rem;
+    user-select: none;
+}
+
+.stacks-front > span {
+    background: rgba(139, 92, 246, 0.15);
     color: var(--cor-accent);
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.22);
-    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.stacks-back > span {
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.slide-stack li {
+    list-style: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.16rem 0.5rem;
     border-radius: 4px;
     letter-spacing: 0.2px;
+    transition: all 0.2s ease;
+}
+
+.stacks-front li {
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #ddd6fe;
+}
+
+.stacks-front li:hover {
+    color: #fff;
+    background: rgba(139, 92, 246, 0.22);
+    border-color: var(--cor-accent);
+    transform: translateY(-1px);
+}
+
+.stacks-back li {
+    border-color: rgba(56, 189, 248, 0.2);
+    color: #bae6fd;
+}
+
+.stacks-back li:hover {
+    color: #fff;
+    background: rgba(56, 189, 248, 0.22);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
 }
 
 .slide-acoes {
@@ -1263,27 +1350,103 @@ section h2 {
 }
 
 /* ═══════════════════════════════════
-   RESPONSIVIDADE
+   RESPONSIVIDADE (Mobile & Tablets)
 ═══════════════════════════════════ */
-@media (max-width: 960px) {
-    .slide-projeto {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-        gap: 2rem;
+
+/* Tablets em paisagem e notebooks compactos */
+@media (max-width: 1024px) {
+    .sidebar-nav {
+        right: 14px;
+    }
+    
+    .projetos-header {
+        margin-bottom: 1rem;
     }
 }
 
+/* Tablets e Telas Médias */
+@media (max-width: 960px) {
+    .slide-projeto {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+        gap: 1.75rem;
+    }
+    
+    .preview-mockup {
+        max-width: 520px;
+    }
+}
+
+/* Celulares grandes e tablets em retrato (<= 768px) */
 @media (max-width: 768px) {
     html {
-        scroll-snap-type: none;
+        scroll-snap-type: none !important;
     }
 
     section {
         min-height: auto;
-        padding: 5rem 1.5rem 3rem;
+        padding: 4.8rem 1.25rem 2.8rem;
         scroll-snap-align: none;
     }
 
+    header {
+        padding: 0.85rem 1.25rem;
+    }
+
+    .sidebar-nav,
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    /* Hero */
+    #hero {
+        flex-direction: column;
+        padding-top: calc(var(--espacamento-md) + 64px);
+        text-align: center;
+        gap: 1.8rem;
+    }
+
+    #hero .hero-texto {
+        align-items: center;
+    }
+
+    #hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        letter-spacing: -1px;
+    }
+
+    #hero .subtitulo {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .hero-botoes {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+    }
+
+    .hero-botoes a {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        padding: 0.7rem 1rem;
+        font-size: 0.88rem;
+    }
+
+    .code-card {
+        max-width: 100%;
+    }
+
+    .code-body {
+        padding: 18px 18px;
+        font-size: 0.8rem;
+    }
+
+    /* Sobre */
     .sobre-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1293,53 +1456,269 @@ section h2 {
         transform: none;
     }
 
-    .sidebar-nav,
-    .scroll-indicator {
-        display: none;
+    /* Skills */
+    .skills-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem;
     }
 
-    #hero {
+    /* Projetos */
+    .projetos-header {
         flex-direction: column;
-        padding-top: calc(var(--espacamento-md) + 70px);
-        text-align: center;
-        gap: var(--espacamento-md);
+        align-items: stretch;
+        gap: 0.85rem;
+        margin-bottom: 1rem;
     }
 
-    #hero .hero-texto {
+    .projetos-nav-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 
-    #hero .subtitulo {
-        max-width: 100%;
+    .slide-counter {
+        font-size: 0.95rem;
     }
 
-    #hero h1 {
-        letter-spacing: -1px;
+    .slider-arrows {
+        gap: 0.6rem;
     }
 
-    .skills-icons-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .slider-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        touch-action: manipulation;
     }
 
     .slide-projeto {
-        padding: 1.5rem;
+        padding: 1.35rem 1.15rem;
+        gap: 1.35rem;
+        border-radius: 12px;
+    }
+
+    .slide-titulo {
+        font-size: 1.3rem;
+    }
+
+    .slide-descricao {
+        font-size: 0.86rem;
+    }
+
+    .slide-acoes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+    }
+
+    .preview-mockup {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mockup-screen {
+        max-height: 220px;
+    }
+
+    .mockup-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .mockup-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    /* Contato */
+    #contato address {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    #contato address a {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.2rem;
+    }
+
+    .email-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .email-container #link-email {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        text-align: left;
+    }
+
+    /* No mobile/touch o botão de copiar fica sempre disponível e acessível */
+    .btn-copiar-email {
+        max-width: 95px;
+        opacity: 1;
+        padding: 0.4rem 0.75rem;
+        margin-right: 6px;
+        pointer-events: auto;
     }
 }
 
+/* Celulares em geral (<= 480px) */
 @media (max-width: 480px) {
+    section {
+        padding: 4.2rem 1rem 2.4rem;
+    }
+
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    #hero h1 {
+        font-size: clamp(1.95rem, 8.5vw, 2.5rem);
+        letter-spacing: -0.5px;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-botoes a {
+        width: 100%;
+    }
+
+    .code-body {
+        padding: 14px 12px;
+        font-size: 0.74rem;
+        line-height: 1.55;
+    }
+
+    /* Skills em 3 colunas em telas pequenas */
     .skills-icons-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+
+    .skill-icon-item {
+        padding: 0.95rem 0.4rem;
+        gap: 0.45rem;
+        border-radius: 10px;
+    }
+
+    .skill-icon-item i {
+        font-size: 2.1rem;
+    }
+
+    .skill-icon-item span {
+        font-size: 0.68rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    /* Slider Projetos */
+    .slide-projeto {
+        padding: 1.15rem 0.9rem;
+        gap: 1.15rem;
+    }
+
+    .slide-titulo {
+        font-size: 1.18rem;
+    }
+
+    .slide-descricao {
+        font-size: 0.82rem;
+        line-height: 1.55;
+    }
+
+    .stacks-front,
+    .stacks-back {
+        gap: 0.3rem;
+    }
+
+    .stacks-front > span,
+    .stacks-back > span {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.45rem;
+    }
+
+    .slide-stack li {
+        font-size: 0.68rem;
+        padding: 0.14rem 0.45rem;
+    }
+
+    .slide-acoes {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .btn-projeto-primary,
+    .badge-status-producao {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
     }
 
     .mockup-grid {
         grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
 
-    .projetos-header {
-        align-items: flex-start;
+    .mockup-content {
+        padding: 1rem 0.85rem;
+    }
+
+    .mockup-code-line {
+        font-size: 0.68rem;
+        padding: 5px 8px;
+    }
+
+    .slider-dots {
+        margin-top: 0.9rem;
+        gap: 5px;
+    }
+
+    .dot-indicator {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot-indicator.active {
+        width: 18px;
+    }
+
+    /* Contato */
+    .email-container {
+        font-size: 0.82rem;
+    }
+
+    .email-container #link-email {
+        font-size: 0.78rem;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .btn-copiar-email {
+        font-size: 0.72rem;
+        padding: 0.32rem 0.6rem;
+    }
+}
+
+/* Celulares ultra-compactos (<= 360px - iPhone SE 1st gen, Galaxy A series compact) */
+@media (max-width: 360px) {
+    .skills-icons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .slide-projeto {
+        padding: 1rem 0.75rem;
+    }
+
+    .slide-titulo {
+        font-size: 1.08rem;
     }
 }

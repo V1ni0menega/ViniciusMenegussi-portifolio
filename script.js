@@ -167,7 +167,7 @@ if (dotsContainer) {
 
 function updateSlider(index) {
     currentSlide = (index + totalSlides) % totalSlides;
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    track.style.transform = `translate3d(-${currentSlide * 100}%, 0, 0)`;
 
     slides.forEach((slide, idx) => {
         slide.classList.toggle('active', idx === currentSlide);
@@ -186,74 +186,121 @@ function updateSlider(index) {
 if (prevBtn) prevBtn.addEventListener('click', () => updateSlider(currentSlide - 1));
 if (nextBtn) nextBtn.addEventListener('click', () => updateSlider(currentSlide + 1));
 
-// Suporte a swipe touch / drag
-let startX = 0, dist = 0;
+// Suporte a swipe touch fluido e responsivo para celulares
+let touchStartX = 0;
+let touchStartY = 0;
+let touchDeltaX = 0;
+let touchDeltaY = 0;
+let isHorizontalGesture = false;
+let isTouching = false;
 const viewport = document.getElementById('slider-viewport');
 
-viewport.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    dist = 0;
-}, { passive: true });
+if (viewport) {
+    viewport.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchDeltaX = 0;
+        touchDeltaY = 0;
+        isHorizontalGesture = false;
+        isTouching = true;
+    }, { passive: true });
 
-viewport.addEventListener('touchmove', (e) => {
-    dist = e.touches[0].clientX - startX;
-}, { passive: true });
+    viewport.addEventListener('touchmove', (e) => {
+        if (!isTouching || e.touches.length !== 1) return;
+        touchDeltaX = e.touches[0].clientX - touchStartX;
+        touchDeltaY = e.touches[0].clientY - touchStartY;
 
-viewport.addEventListener('touchend', () => {
-    if (Math.abs(dist) > 50) {
-        if (dist < 0) updateSlider(currentSlide + 1);
-        else updateSlider(currentSlide - 1);
-    }
-});
+        // Detecta se a intenção do usuário é navegar no carrossel horizontal
+        if (!isHorizontalGesture && Math.abs(touchDeltaX) > 12) {
+            if (Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.3) {
+                isHorizontalGesture = true;
+            }
+        }
+    }, { passive: true });
 
-// Scroll do mouse sobre o slider de projetos
-let scrollCooldown = false;
-viewport.addEventListener('wheel', (e) => {
-    if (scrollCooldown) return;
+    viewport.addEventListener('touchend', () => {
+        if (!isTouching) return;
+        isTouching = false;
 
-    // Se estiver rolando para baixo no último slide, permite descer para contato
-    if (e.deltaY > 0 && currentSlide === totalSlides - 1) {
-        return;
-    }
-    // Se estiver rolando para cima no primeiro slide, permite subir para skills
-    if (e.deltaY < 0 && currentSlide === 0) {
-        return;
-    }
+        // Dispara transição apenas se for gesto horizontal intencional
+        if (isHorizontalGesture && Math.abs(touchDeltaX) > 42) {
+            if (touchDeltaX < 0) {
+                updateSlider(currentSlide + 1);
+            } else {
+                updateSlider(currentSlide - 1);
+            }
+        }
+        touchDeltaX = 0;
+        touchDeltaY = 0;
+        isHorizontalGesture = false;
+    }, { passive: true });
 
-    e.preventDefault();
-    scrollCooldown = true;
-    if (e.deltaY > 0 || e.deltaX > 0) {
-        updateSlider(currentSlide + 1);
-    } else {
-        updateSlider(currentSlide - 1);
-    }
-    setTimeout(() => { scrollCooldown = false; }, 600);
-}, { passive: false });
+    // Navegação do slider via Scroll do Mouse / Trackpad (Desktop Web)
+    let wheelCooldown = false;
+    viewport.addEventListener('wheel', (e) => {
+        // No celular/touch, não intercepta o scroll para manter rolagem natural da página
+        if (window.innerWidth <= 768) return;
 
-// Drag com mouse no slider
-let mouseDown = false, mouseStartX = 0, mouseDist = 0;
+        // Se estiver rolando para baixo no último slide, permite descer para contato
+        if (e.deltaY > 0 && currentSlide === totalSlides - 1) {
+            return;
+        }
+        // Se estiver rolando para cima no primeiro slide, permite subir para skills
+        if (e.deltaY < 0 && currentSlide === 0) {
+            return;
+        }
 
-viewport.addEventListener('mousedown', (e) => {
-    mouseDown = true;
-    mouseStartX = e.clientX;
-    mouseDist = 0;
-    viewport.style.cursor = 'grabbing';
-});
+        // Determina se houve rolagem com intenção (vertical do mouse ou horizontal do trackpad)
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        if (Math.abs(delta) < 18) return;
 
-document.addEventListener('mouseup', () => {
-    if (!mouseDown) return;
-    mouseDown = false;
-    viewport.style.cursor = '';
-    if (Math.abs(mouseDist) > 60) {
-        if (mouseDist < 0) updateSlider(currentSlide + 1);
-        else updateSlider(currentSlide - 1);
-    }
-});
+        if (wheelCooldown) {
+            e.preventDefault();
+            return;
+        }
 
-document.addEventListener('mousemove', (e) => {
-    if (!mouseDown) return;
-    mouseDist = e.clientX - mouseStartX;
-});
+        e.preventDefault();
+        wheelCooldown = true;
+
+        if (delta > 0) {
+            updateSlider(currentSlide + 1);
+        } else {
+            updateSlider(currentSlide - 1);
+        }
+
+        // Cooldown ágil (320ms) sincronizado com a animação GPU para fluidez máxima
+        setTimeout(() => {
+            wheelCooldown = false;
+        }, 320);
+    }, { passive: false });
+
+    // Drag com mouse no slider (Desktop)
+    let mouseDown = false, mouseStartX = 0, mouseDist = 0;
+
+    viewport.addEventListener('mousedown', (e) => {
+        if (e.target.closest('a, button, .preview-mockup.is-clickable')) return;
+        mouseDown = true;
+        mouseStartX = e.clientX;
+        mouseDist = 0;
+        viewport.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!mouseDown) return;
+        mouseDown = false;
+        if (viewport) viewport.style.cursor = '';
+        if (Math.abs(mouseDist) > 60) {
+            if (mouseDist < 0) updateSlider(currentSlide + 1);
+            else updateSlider(currentSlide - 1);
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!mouseDown) return;
+        mouseDist = e.clientX - mouseStartX;
+    });
+}
 
 // Inicialização
 sincronizarEstadoNavegacao();
