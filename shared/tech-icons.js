@@ -15,15 +15,18 @@
     const ICON_MAP = [
         // Linguagens & Frameworks Frontend
         { match: /\b(angular material|angular 21|angularjs|angular)\b/i, icon: 'devicon-angularjs-plain colored' },
-        { match: /\b(react|reactjs)\b/i, icon: 'devicon-react-original colored' },
+        { match: /\b(react 19\.2|react 19|react icons|lucide react|react|reactjs)\b/i, icon: 'devicon-react-original colored' },
+        { match: /\b(vite 8\.0|vite 8|vite|vitejs)\b/i, icon: 'devicon-vitejs-plain colored' },
+        { match: /\b(streamlit)\b/i, icon: 'devicon-streamlit-plain colored' },
         { match: /\b(typescript|ts)\b/i, icon: 'devicon-typescript-plain colored' },
-        { match: /\b(javascript|vanilla js|js)\b/i, icon: 'devicon-javascript-plain colored' },
-        { match: /\b(tailwind|tailwindcss)\b/i, icon: 'devicon-tailwindcss-plain colored' },
+        { match: /\b(javascript vanilla|vanilla js|javascript|js)\b/i, icon: 'devicon-javascript-plain colored' },
+        { match: /\b(tailwind 4\.2|tailwindcss|tailwind)\b/i, icon: 'devicon-tailwindcss-plain colored' },
         { match: /\b(html|html5|html semântico)\b/i, icon: 'devicon-html5-plain colored' },
-        { match: /\b(css|css3|css moderno|vanilla css)\b/i, icon: 'devicon-css3-plain colored' },
+        { match: /\b(css|css3|css moderno|vanilla css|css vanilla)\b/i, icon: 'devicon-css3-plain colored' },
         { match: /\b(eleventy|11ty)\b/i, icon: 'devicon-eleventy-plain colored' },
         { match: /\b(storybook)\b/i, icon: 'devicon-storybook-plain colored' },
-        { match: /\b(google icons|google)\b/i, icon: 'devicon-google-plain colored' },
+        { match: /\b(google icons|google ai sdk|google|gemini 3\.7 flash|gemini 3\.7|gemini)\b/i, icon: 'devicon-google-plain colored' },
+        { match: /\b(eslint 9\.39|eslint)\b/i, icon: 'devicon-eslint-plain colored' },
         { match: /\b(chart\.js|chartjs|chart)\b/i, icon: 'devicon-chartjs-plain colored' },
 
         // Linguagens & Frameworks Backend
@@ -55,7 +58,7 @@
         { match: /\b(sonarqube)\b/i, icon: 'devicon-sonarqube-plain colored' },
         { match: /\b(junit 5|junit)\b/i, icon: 'devicon-junit-plain colored' },
         { match: /\b(mockito)\b/i, icon: 'devicon-java-plain colored' },
-        { match: /\b(shell script|shell|bash)\b/i, icon: 'devicon-bash-plain' },
+        { match: /\b(shell script|shell|bash|terminal cli|terminal linux|terminal)\b/i, icon: 'devicon-bash-plain' },
         { match: /\b(websocket|websockets)\b/i, icon: 'devicon-socketio-original colored' }
     ];
 

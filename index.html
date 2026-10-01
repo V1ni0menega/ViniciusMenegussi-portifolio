@@ -209,7 +209,7 @@
                 </div>
                 <div class="projetos-nav-top">
                     <span class="slide-counter"><strong id="slide-current">01</strong> / <span
-                            id="slide-total">10</span></span>
+                            id="slide-total">07</span></span>
                     <div class="slider-arrows">
                         <button class="slider-btn prev-btn" id="proj-prev" aria-label="Projeto anterior">&larr;</button>
                         <button class="slider-btn next-btn" id="proj-next" aria-label="Próximo projeto">&rarr;</button>
@@ -271,7 +271,9 @@
                             </div>
                         </div>
                         <div class="slide-preview">
-                            <div class="preview-mockup">
+                            <div class="preview-mockup is-clickable"
+                                data-external-url="https://pma.esteio.rs.gov.br"
+                                data-project-name="Portal PMA - Prefeitura de Esteio">
                                 <div class="mockup-bar">
                                     <div class="mockup-dots">
                                         <span class="m-dot dot-red"></span>
@@ -289,6 +291,11 @@
                                             class="mockup-img" loading="eager" decoding="async" width="1024"
                                             height="495" />
                                     </picture>
+                                    <div class="mockup-screen-overlay">
+                                        <span class="mockup-overlay-badge">
+                                            <span>Acessar aplicação</span> &nearr;
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -473,7 +480,7 @@
                         </div>
                         <div class="slide-preview">
                             <div class="preview-mockup is-clickable"
-                                data-external-url="https://github.com/V1ni0menega/GitQuest"
+                                data-external-url="https://gitquest-mu.vercel.app"
                                 data-project-name="GitQuest">
                                 <div class="mockup-bar">
                                     <div class="mockup-dots">
@@ -501,439 +508,226 @@
                         </div>
                     </article>
 
-                    <!-- Slide 5: Auth & API Gateway Hub -->
-                    <article class="slide-projeto" data-index="4" id="card-api-gateway">
+                    <!-- Slide 5: LinkedIn AI Post Generator -->
+                    <article class="slide-projeto" data-index="4" id="card-linkedin-ai">
                         <div class="slide-conteudo">
-                            <div class="card-numero">P.05 // BACKEND &amp; MICROSSERVIÇOS</div>
-                            <h3 class="slide-titulo">Auth &amp; API Gateway Hub</h3>
+                            <div class="card-numero">P.05 // IA GENERATIVA &amp; DEVREL</div>
+                            <h3 class="slide-titulo">LinkedIn AI Post Generator (com Gemini 3.7 Flash)</h3>
                             <p class="slide-descricao">
-                                Gateway centralizado para autenticação distribuída, rate limiting e roteamento dinâmico
-                                de microsserviços. Implementa segurança corporativa com tokens JWT assimétricos,
-                                observabilidade com Prometheus e cache em Redis de baixa latência.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-back">
-                                        <span>Backend</span>
-                                        <li>Java 25</li>
-                                        <li>Spring Cloud Gateway</li>
-                                        <li>Redis Cache</li>
-                                        <li>JWT + RSA</li>
-                                        <li>OpenAPI / Swagger</li>
-                                    </div>
-                                    <div class="stacks-front">
-                                        <span>Infra &amp; Cloud</span>
-                                        <li>Docker</li>
-                                        <li>Rate Limiting</li>
-                                        <li>Prometheus</li>
-                                        <li>Nginx</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-gateway">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Arquitetura Cloud
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">api.menegussi.dev/v1/health</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● 99.98% Uptime</div>
-                                    <h4>Microsserviços &amp; Rate Limiting</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">&lt; 14ms</span>
-                                            <span class="stat-txt">Latência Média</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">JWT + RSA</span>
-                                            <span class="stat-txt">Segurança</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">Redis</span>
-                                            <span class="stat-txt">Cache Layer</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; Spring Gateway &bull; Dockerized</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 6: EcoMonitor IoT -->
-                    <article class="slide-projeto" data-index="5" id="card-ecomonitor">
-                        <div class="slide-conteudo">
-                            <div class="card-numero">P.06 // IOT &amp; TELEMETRIA</div>
-                            <h3 class="slide-titulo">EcoMonitor — Sensores em Tempo Real</h3>
-                            <p class="slide-descricao">
-                                Dashboard de telemetria contínua com streaming de dados via WebSockets para sensores
-                                ambientais (qualidade do ar, temperatura e umidade).
-                                Alertas automáticos para limiares críticos de poluição e visualização gráfica com
-                                Chart.js.
+                                Assistente inteligente em Python projetado para desenvolvedores transformarem notas,
+                                tarefas diárias, commits ou resumos de aulas em postagens maduras, profissionais e
+                                reflexivas para o LinkedIn, utilizando a API oficial do Gemini 3.7 Flash.
                             </p>
                             <div class="slide-stack">
                                 <span class="stack-label">Construído com:</span>
                                 <ul>
                                     <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>Chart.js</li>
-                                        <li>TypeScript</li>
-                                        <li>TailwindCSS</li>
-                                        <li>WebSocket Client</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>IoT &amp; Backend</span>
-                                        <li>Node.js</li>
-                                        <li>MQTT Broker</li>
-                                        <li>MongoDB</li>
-                                        <li>WebSocket Server</li>
-                                        <li>Docker</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-ecomonitor">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Telemetria Ativa
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">ecomonitor.io/telemetry</span>
-                                    <span class="mockup-live-tag">● Stream</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● Streaming WebSocket</div>
-                                    <h4>Telemetria &amp; Sensores IoT</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">500ms</span>
-                                            <span class="stat-txt">Taxa Refresh</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">MQTT</span>
-                                            <span class="stat-txt">Protocolo Broker</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">Alertas</span>
-                                            <span class="stat-txt">Eventos Push</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; ws://ecomonitor/sensors/live</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 7: Smart Esteio -->
-                    <article class="slide-projeto" data-index="6" id="card-smart-esteio">
-                        <div class="slide-conteudo">
-                            <div class="card-numero">P.07 // URBAN TECH &amp; SERVIÇOS</div>
-                            <h3 class="slide-titulo">Smart Esteio — Zeladoria Urbana</h3>
-                            <p class="slide-descricao">
-                                Sistema colaborativo para registro e acompanhamento de demandas urbanas (iluminação,
-                                vias públicas, saneamento).
-                                Integração com mapas interativos, triagem automatizada por secretaria e feedback
-                                transparente ao munícipe.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>React</li>
-                                        <li>TypeScript</li>
-                                        <li>Leaflet GIS</li>
-                                        <li>TailwindCSS</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Backend</span>
-                                        <li>Spring Boot 3</li>
-                                        <li>PostgreSQL / PostGIS</li>
-                                        <li>REST APIs</li>
-                                        <li>Docker</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-smartesteio">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Protótipo
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">smart.esteio.rs.gov.br</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● Mapeamento Ativo</div>
-                                    <h4>Geolocalização &amp; Demandas</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">GIS</span>
-                                            <span class="stat-txt">Leaflet Engine</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">SLA</span>
-                                            <span class="stat-txt">Triagem Automática</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">PWA</span>
-                                            <span class="stat-txt">Mobile Ready</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; Prefeitura de Esteio &bull; Zeladoria</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 8: Pipeline CI/CD & Deploy -->
-                    <article class="slide-projeto" data-index="7" id="card-pipeline-devops">
-                        <div class="slide-conteudo">
-                            <div class="card-numero">P.08 // CLOUD &amp; DEVOPS</div>
-                            <h3 class="slide-titulo">Pipeline CI/CD &amp; Deploy Automatizado</h3>
-                            <p class="slide-descricao">
-                                Esteira de automação com GitHub Actions para validação estática de código (linters,
-                                SonarQube),
-                                execução de testes automatizados e deploy contínuo em containers Docker com Nginx
-                                reverse proxy.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>CI / CD</span>
-                                        <li>GitHub Actions</li>
-                                        <li>SonarQube</li>
-                                        <li>Linters</li>
-                                        <li>Testes Automatizados</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Infra &amp; Cloud</span>
-                                        <li>Docker</li>
-                                        <li>Linux</li>
-                                        <li>Nginx Proxy</li>
-                                        <li>Shell Script</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-pipeline">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> CI/CD Passed
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">ci.menegussi.dev/pipelines/build</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● Build: Passing</div>
-                                    <h4>Esteira Automatizada de Deploy</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">100%</span>
-                                            <span class="stat-txt">Testes Unitários</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">Docker</span>
-                                            <span class="stat-txt">Container Image</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">&lt; 2min</span>
-                                            <span class="stat-txt">Tempo de Build</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; docker compose up -d --build</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 9: Design System -->
-                    <article class="slide-projeto" data-index="8" id="card-design-system">
-                        <div class="slide-conteudo">
-                            <div class="card-numero">P.09 // DESIGN SYSTEM &amp; UI/UX</div>
-                            <h3 class="slide-titulo">DVLPR Design System &amp; Tokens</h3>
-                            <p class="slide-descricao">
-                                Biblioteca de componentes acessíveis e tokens visuais (cores, espaçamentos, tipografia,
-                                micro-interações)
-                                focada em alta performance, WCAG AA e consistência visual para aplicações web modernas.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Design Tokens</span>
-                                        <li>Vanilla CSS</li>
-                                        <li>CSS Custom Properties</li>
-                                        <li>HSL Colors</li>
-                                        <li>Fluid Clamp()</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Componentes UI</span>
-                                        <li>Web Components</li>
-                                        <li>HTML5 Semântico</li>
-                                        <li>WCAG AA</li>
-                                        <li>Storybook</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-ds">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> UI System
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">ds.dvlpr.pro/components</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● WCAG AA Compliant</div>
-                                    <h4>Tokens &amp; Componentes Modulares</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">30+</span>
-                                            <span class="stat-txt">Componentes</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">0 dep</span>
-                                            <span class="stat-txt">Vanilla Puro</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">Tokens</span>
-                                            <span class="stat-txt">HSL Tailored</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; :root { --cor-accent: #8b5cf6; }</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 10: Data Analytics & BI -->
-                    <article class="slide-projeto" data-index="9" id="card-data-analytics">
-                        <div class="slide-conteudo">
-                            <div class="card-numero">P.10 // DATA ANALYTICS &amp; BI</div>
-                            <h3 class="slide-titulo">Painel de Indicadores &amp; Insights</h3>
-                            <p class="slide-descricao">
-                                Plataforma analítica para agregação e cruzamento de dados públicos municipais,
-                                gerando relatórios gerenciais automatizados e gráficos interativos para tomada de
-                                decisão baseada em dados.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend &amp; BI</span>
-                                        <li>Chart.js</li>
-                                        <li>Dashboard Grid</li>
-                                        <li>Exportação PDF/CSV</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Data Pipeline</span>
+                                        <span>Frontend &amp; UI</span>
+                                        <li>Streamlit</li>
+                                        <li>Terminal CLI</li>
                                         <li>Python</li>
-                                        <li>FastAPI</li>
-                                        <li>Pandas ETL</li>
-                                        <li>PostgreSQL</li>
-                                        <li>Docker</li>
+                                        <li>UX Conversacional</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Backend &amp; IA</span>
+                                        <li>Gemini 3.7 Flash</li>
+                                        <li>Google AI SDK</li>
+                                        <li>Prompt Engineering</li>
+                                        <li>Token Economy</li>
                                     </div>
                                 </ul>
                             </div>
                             <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-analytics">
+                                <a href="https://github.com/V1ni0menega/LinkedIn-posts" target="_blank"
+                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-linkedin-ai">
                                     Ver no GitHub &rarr;
                                 </a>
                                 <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Dados Públicos
+                                    <span class="status-ponto"></span> Gemini 3.7 Flash • Sub-segundo
                                 </span>
                             </div>
                         </div>
                         <div class="slide-preview">
-                            <div class="preview-mockup">
+                            <div class="preview-mockup is-clickable"
+                                data-external-url="https://github.com/V1ni0menega/LinkedIn-posts"
+                                data-project-name="LinkedIn AI Post Generator">
                                 <div class="mockup-bar">
                                     <div class="mockup-dots">
                                         <span class="m-dot dot-red"></span>
                                         <span class="m-dot dot-yellow"></span>
                                         <span class="m-dot dot-green"></span>
                                     </div>
-                                    <span class="mockup-url">analytics.esteio.gov.br</span>
+                                    <span class="mockup-url">github.com/V1ni0menega/LinkedIn-posts</span>
+                                    <span class="mockup-live-tag">● Gemini AI</span>
                                 </div>
                                 <div class="mockup-content">
-                                    <div class="mockup-badge green">● Data Pipeline</div>
-                                    <h4>ETL &amp; Visualização Analítica</h4>
+                                    <div class="mockup-badge green">● Geração Ultrarrápida (&lt; 1s)</div>
+                                    <h4>Controles Modulares &amp; IA</h4>
                                     <div class="mockup-grid">
                                         <div class="mockup-stat">
-                                            <span class="stat-num">FastAPI</span>
-                                            <span class="stat-txt">High Speed API</span>
+                                            <span class="stat-num">4 Tons</span>
+                                            <span class="stat-txt">Técnico • Casual • Story</span>
                                         </div>
                                         <div class="mockup-stat">
-                                            <span class="stat-num">Pandas</span>
-                                            <span class="stat-txt">ETL Pipeline</span>
+                                            <span class="stat-num">3 Níveis</span>
+                                            <span class="stat-txt">Economia de Tokens</span>
                                         </div>
                                         <div class="mockup-stat">
-                                            <span class="stat-num">BI</span>
-                                            <span class="stat-txt">Insights Cívicos</span>
+                                            <span class="stat-num">2 UIs</span>
+                                            <span class="stat-txt">Streamlit + CLI</span>
                                         </div>
                                     </div>
-                                    <div class="mockup-code-line">&gt; python -m analytics.pipeline</div>
+                                    <div class="mockup-code-line">&gt; python app.py --model gemini-3.7-flash --auto-save</div>
+                                </div>
+                                <div class="mockup-screen-overlay">
+                                    <span class="mockup-overlay-badge">
+                                        <span>Ver no GitHub</span> &nearr;
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 6: Dev Dock -->
+                    <article class="slide-projeto" data-index="5" id="card-dev-dock">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.06 // REACT 19 &amp; TERMINAL SUITE</div>
+                            <h3 class="slide-titulo">Dev Dock — Suíte de Terminal &amp; Produtividade</h3>
+                            <p class="slide-descricao">
+                                Suíte interativa de produtividade e ambiente prático de aprendizado de comandos de
+                                terminal e Git para desenvolvedores. Construída com React 19, Vite e Tailwind CSS,
+                                proporcionando visualização reativa de comandos e alta velocidade.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>React 19.2</li>
+                                        <li>Vite 8.0</li>
+                                        <li>Tailwind 4.2</li>
+                                        <li>Lucide React</li>
+                                        <li>React Icons</li>
+                                        <li>ESLint 9.39</li>
+                                    </div>
+                                    <div class="stacks-back">
+                                        <span>Ferramentas &amp; CLI</span>
+                                        <li>Git</li>
+                                        <li>Terminal Linux</li>
+                                        <li>Shell Script</li>
+                                        <li>Dev Server HMR</li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega/comandos-uteis-manual" target="_blank"
+                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-devdock">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> React 19 + Vite
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup is-clickable"
+                                data-external-url="https://github.com/V1ni0menega/comandos-uteis-manual"
+                                data-project-name="Dev Dock">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">devdock.menegussi.dev</span>
+                                    <span class="mockup-live-tag">● Vite HMR</span>
+                                </div>
+                                <div class="mockup-screen">
+                                    <picture>
+                                        <source srcset="assets/dev-dock-preview.webp" type="image/webp">
+                                        <img src="assets/dev-dock-preview.png"
+                                            alt="Interface real do Dev Dock - Suíte de Terminal &amp; Produtividade" class="mockup-img"
+                                            loading="lazy" decoding="async" width="1341" height="662" />
+                                    </picture>
+                                    <div class="mockup-screen-overlay">
+                                        <span class="mockup-overlay-badge">
+                                            <span>Ver no GitHub</span> &nearr;
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Slide 7: Projeto Login -->
+                    <article class="slide-projeto" data-index="6" id="card-projeto-login">
+                        <div class="slide-conteudo">
+                            <div class="card-numero">P.07 // FRONTEND FOUNDATIONS &amp; UI</div>
+                            <h3 class="slide-titulo">Projeto Login — Interface Moderna de Autenticação</h3>
+                            <p class="slide-descricao">
+                                Interface de autenticação e tela de acesso de usuários desenvolvida com foco nos
+                                fundamentos essenciais da web: HTML5 semântico, estilização avançada em CSS3
+                                (Glassmorphism, Flexbox, gradientes modernos), validação de campos e total responsividade.
+                            </p>
+                            <div class="slide-stack">
+                                <span class="stack-label">Construído com:</span>
+                                <ul>
+                                    <div class="stacks-front">
+                                        <span>Frontend</span>
+                                        <li>HTML5 Semântico</li>
+                                        <li>CSS3 Moderno</li>
+                                        <li>Glassmorphism</li>
+                                        <li>JavaScript Vanilla</li>
+                                        <li>Design Responsivo</li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="slide-acoes">
+                                <a href="https://github.com/V1ni0menega/Projeto-login" target="_blank"
+                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-projeto-login">
+                                    Ver no GitHub &rarr;
+                                </a>
+                                <span class="badge-status-producao">
+                                    <span class="status-ponto"></span> Vanilla Web
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slide-preview">
+                            <div class="preview-mockup is-clickable"
+                                data-external-url="https://github.com/V1ni0menega/Projeto-login"
+                                data-project-name="Projeto Login">
+                                <div class="mockup-bar">
+                                    <div class="mockup-dots">
+                                        <span class="m-dot dot-red"></span>
+                                        <span class="m-dot dot-yellow"></span>
+                                        <span class="m-dot dot-green"></span>
+                                    </div>
+                                    <span class="mockup-url">github.com/V1ni0menega/Projeto-login</span>
+                                    <span class="mockup-live-tag">● Live Demo</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-badge green">● Clean Architecture &amp; UI/UX</div>
+                                    <h4>Página de Login &amp; Acesso</h4>
+                                    <div class="mockup-grid">
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">HTML5</span>
+                                            <span class="stat-txt">Semântica Estrita</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">CSS3</span>
+                                            <span class="stat-txt">Glassmorphism &amp; FX</span>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <span class="stat-num">A11y</span>
+                                            <span class="stat-txt">Foco &amp; Usabilidade</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-code-line">&gt; auth.validateCredentials() &rarr; Status 200 OK</div>
+                                </div>
+                                <div class="mockup-screen-overlay">
+                                    <span class="mockup-overlay-badge">
+                                        <span>Ver no GitHub</span> &nearr;
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -951,9 +745,6 @@
                 <button class="dot-indicator" data-index="4" aria-label="Ir para projeto 5"></button>
                 <button class="dot-indicator" data-index="5" aria-label="Ir para projeto 6"></button>
                 <button class="dot-indicator" data-index="6" aria-label="Ir para projeto 7"></button>
-                <button class="dot-indicator" data-index="7" aria-label="Ir para projeto 8"></button>
-                <button class="dot-indicator" data-index="8" aria-label="Ir para projeto 9"></button>
-                <button class="dot-indicator" data-index="9" aria-label="Ir para projeto 10"></button>
             </div>
         </section>
 
