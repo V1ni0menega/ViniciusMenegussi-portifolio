@@ -991,12 +991,15 @@ section h2 {
     padding: 7px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     gap: 8px;
+    min-height: 36px;
+    box-sizing: border-box;
 }
 
 .mockup-dots {
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-shrink: 0;
 }
 
 .m-dot {
@@ -1012,6 +1015,8 @@ section h2 {
     color: inherit;
     display: inline-flex;
     align-items: center;
+    min-width: 0;
+    flex: 1 1 auto;
 }
 
 .mockup-bar a:hover .mockup-url {
@@ -1021,15 +1026,20 @@ section h2 {
 
 .mockup-url {
     margin-left: 4px;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--cor-texto-secundario);
     font-family: "Fira Code", monospace;
     opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1 1 auto;
 }
 
 .mockup-live-tag {
     margin-left: auto;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1038,6 +1048,11 @@ section h2 {
     border: 1px solid rgba(16, 185, 129, 0.25);
     padding: 2px 7px;
     border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .mockup-screen {
