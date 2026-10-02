@@ -590,39 +590,111 @@ section h2 {
 }
 
 /* ═══════════════════════════════════
-   SKILLS — Grid de ícones (dvlpr.pro style)
+   SKILLS — Infinite Animated Marquee (dvlpr.pro style)
 ═══════════════════════════════════ */
 #skills {
     border-top: none;
+    overflow: hidden;
 }
 
-/* Grid de ícones: 6 por linha em desktop, responsivo */
-.skills-icons-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+.skills-header {
+    margin-bottom: 2rem;
+}
+
+.skills-subtitle {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-top: 0.6rem;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+/* Container do Marquee com efeito de fade nas extremidades */
+.skills-marquee-container {
+    display: flex;
+    flex-direction: column;
     gap: 1.25rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0.75rem 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* Linha horizontal individual */
+.skills-marquee-row {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    user-select: none;
+}
+
+/* Trilho com aceleração de hardware GPU e animação contínua */
+.skills-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-scroll-left 32s linear infinite;
+}
+
+/* Linha secundária com movimento invertido para a direita */
+.skills-marquee-track.track-reverse {
+    animation: marquee-scroll-right 32s linear infinite;
+}
+
+
+/* Animação contínua perfeita sem cortes ou saltos visuais */
+@keyframes marquee-scroll-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes marquee-scroll-right {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 /* Card individual de cada ícone */
 .skill-icon-item {
+    flex: 0 0 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    padding: 1.5rem 1rem;
-    cursor: grab;
+    padding: 1.25rem 0.85rem;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
 }
 
-/* Brilho sutil no hover */
+/* Brilho radial no hover */
 .skill-icon-item::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.14) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .skill-icon-item:hover::before {
@@ -630,21 +702,22 @@ section h2 {
 }
 
 .skill-icon-item:hover {
-    border-color: rgba(139, 92, 246, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.5);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(139, 92, 246, 0.18);
+    background: var(--cor-superficie-hover);
 }
 
 /* Ícone devicon */
 .skill-icon-item i {
-    font-size: 2.8rem;
-    transition: transform 0.3s ease;
+    font-size: 2.7rem;
+    transition: transform 0.25s ease;
     display: block;
     line-height: 1;
 }
 
 .skill-icon-item:hover i {
-    transform: scale(1.1);
+    transform: scale(1.12);
 }
 
 /* Label do ícone */
@@ -660,6 +733,20 @@ section h2 {
 
 .skill-icon-item:hover span {
     color: var(--cor-texto);
+}
+
+/* Acessibilidade: respeita preferências de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    .skills-marquee-track,
+    .skills-marquee-track.track-reverse {
+        animation: none !important;
+    }
+
+    .skills-marquee-row {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.5rem;
+    }
 }
 
 /* ═══════════════════════════════════
@@ -1473,10 +1560,14 @@ section h2 {
         transform: none;
     }
 
-    /* Skills */
-    .skills-icons-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.85rem;
+    /* Skills Marquee em telas médias */
+    .skills-marquee-track {
+        gap: 1rem;
+    }
+
+    .skill-icon-item {
+        flex: 0 0 120px;
+        padding: 1.1rem 0.75rem;
     }
 
     /* Projetos */
@@ -1614,14 +1705,18 @@ section h2 {
         line-height: 1.55;
     }
 
-    /* Skills em 3 colunas em telas pequenas */
-    .skills-icons-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.6rem;
+    /* Skills Marquee em telas pequenas */
+    .skills-marquee-container {
+        gap: 1rem;
+    }
+
+    .skills-marquee-track {
+        gap: 0.85rem;
     }
 
     .skill-icon-item {
-        padding: 0.95rem 0.4rem;
+        flex: 0 0 108px;
+        padding: 0.95rem 0.5rem;
         gap: 0.45rem;
         border-radius: 10px;
     }
@@ -1631,9 +1726,7 @@ section h2 {
     }
 
     .skill-icon-item span {
-        font-size: 0.68rem;
-        white-space: normal;
-        word-break: break-word;
+        font-size: 0.72rem;
     }
 
     /* Slider Projetos */
@@ -1726,9 +1819,18 @@ section h2 {
 
 /* Celulares ultra-compactos (<= 360px - iPhone SE 1st gen, Galaxy A series compact) */
 @media (max-width: 360px) {
-    .skills-icons-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+    .skill-icon-item {
+        flex: 0 0 96px;
+        padding: 0.8rem 0.4rem;
+        gap: 0.35rem;
+    }
+
+    .skill-icon-item i {
+        font-size: 1.85rem;
+    }
+
+    .skill-icon-item span {
+        font-size: 0.68rem;
     }
 
     .slide-projeto {
