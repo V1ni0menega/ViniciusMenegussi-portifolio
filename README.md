@@ -14,7 +14,7 @@
   Interface imersiva dark mode inspirada na estética do <a href="https://dvlpr.pro" target="_blank">dvlpr.pro</a>, com navegação por seções, showcase slider e mockups realistas de sistemas em produção.
 </p>
 
-[🌐 Acessar Portfólio](https://viniciusmenegussi-portifolio.vercel.app/) • [💼 LinkedIn](https://www.linkedin.com/in/vinicius-menegussi-dev) • [🐙 GitHub](https://github.com/V1ni0menega) • [📧 E-mail](mailto:[EMAIL_ADDRESS])
+[🌐 Acessar Portfólio](https://viniciusmenegussi-portifolio-tau.vercel.app/) • [💼 LinkedIn](https://www.linkedin.com/in/vinicius-menegussi-dev) • [🐙 GitHub](https://github.com/V1ni0menega) • [📧 E-mail](mailto:[EMAIL_ADDRESS])
 
 </div>
 
