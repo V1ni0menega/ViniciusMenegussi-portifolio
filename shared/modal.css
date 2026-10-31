@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
    SHARED COMPONENT: MODAL & CONFIRMAÇÃO DE LINK EXTERNO
-   Residencia Fullstack — Frontend Challenge
    ═══════════════════════════════════════════════════════════ */
 
 .modal-overlay {
@@ -23,9 +22,9 @@
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(4, 4, 8, 0.78);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .modal-card {
@@ -33,11 +32,11 @@
     z-index: 1;
     width: 90%;
     max-width: 480px;
-    background: #0d0d14;
-    border: 1px solid rgba(139, 92, 246, 0.35);
+    background: var(--white, #fff);
+    border: 1.5px solid var(--black, #0a0a0a);
     border-radius: 16px;
     padding: 1.8rem;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
     transform: scale(0.92) translateY(12px);
     transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -52,7 +51,7 @@
     right: 1.2rem;
     background: transparent;
     border: none;
-    color: #94a3b8;
+    color: #6b6a64;
     font-size: 1.6rem;
     line-height: 1;
     cursor: pointer;
@@ -62,7 +61,7 @@
 }
 
 .modal-btn-close:hover {
-    color: #fff;
+    color: var(--black, #0a0a0a);
     transform: scale(1.15);
 }
 
@@ -76,13 +75,12 @@
 .modal-icon-badge {
     width: 46px;
     height: 46px;
-    border-radius: 12px;
-    background: rgba(139, 92, 246, 0.12);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    background: var(--black, #0a0a0a);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #a78bfa;
+    color: var(--white, #fff);
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1;
@@ -92,14 +90,14 @@
 
 .modal-titulo {
     font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--cor-texto);
+    font-weight: 800;
+    color: var(--black, #0a0a0a);
     margin: 0;
 }
 
 .modal-subtitulo {
     font-size: 0.78rem;
-    color: var(--cor-texto-secundario);
+    color: #6b6a64;
     margin-top: 3px;
 }
 
@@ -111,24 +109,23 @@
 
 .modal-mensagem {
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: #2b2b2b;
     line-height: 1.5;
     margin: 0;
 }
 
 .modal-url-box {
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #f0efe9;
+    border: 1px solid #0a0a0a;
     border-radius: 8px;
     padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: "Fira Code", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.85rem;
-    color: #34d399;
+    color: #0a0a0a;
     word-break: break-all;
-    border-left: 3px solid #10b981;
 }
 
 .modal-url-icon {
@@ -137,7 +134,7 @@
 
 .modal-alerta {
     font-size: 0.8rem;
-    color: var(--cor-texto-secundario);
+    color: #6b6a64;
     line-height: 1.45;
     margin: 0;
 }
@@ -149,47 +146,44 @@
     gap: 0.75rem;
     margin-top: 1.6rem;
     padding-top: 1.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid #e3e2da;
 }
 
 .btn-modal-cancelar {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #cbd5e1;
-    font-size: 0.88rem;
-    font-weight: 600;
+    border: 1.5px solid #0a0a0a;
+    color: #0a0a0a;
+    font-size: 0.85rem;
+    font-weight: 700;
     padding: 0.65rem 1.25rem;
-    border-radius: 8px;
+    border-radius: 999px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .btn-modal-cancelar:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: #0a0a0a;
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .btn-modal-confirmar {
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-    border: 1px solid rgba(139, 92, 246, 0.5);
+    background: #0a0a0a;
+    border: 1.5px solid #0a0a0a;
     color: #fff;
-    font-size: 0.88rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     padding: 0.65rem 1.4rem;
-    border-radius: 8px;
+    border-radius: 999px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
     transition: all 0.2s ease;
 }
 
 .btn-modal-confirmar:hover {
-    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    background: #262626;
     transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(139, 92, 246, 0.55);
 }
 
 /* Responsividade Mobile para Modal */
@@ -211,7 +205,6 @@
         width: 38px;
         height: 38px;
         font-size: 1.15rem;
-        border-radius: 10px;
     }
 
     .modal-titulo {

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estudo de caso de projeto — Vinicius Menegussi, Desenvolvedor Fullstack">
+    <title>Projeto | Vinicius Menegussi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared/modal.css">
+    <link rel="stylesheet" href="shared/tech-icons.css">
+</head>
+
+<body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header>
+        <nav>
+            <a href="index.html#hero" class="logo">&gt;_ VM</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#sobre">Sobre mim</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
+            </ul>
+            <a href="index.html#contato" class="btn-nav-contato">Contato</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pd" id="pd-root">
+            <div class="container">
+                <a href="index.html#projetos" class="pd-back">&larr; Voltar para projetos</a>
+
+                <div class="pd-head">
+                    <span class="eyebrow" id="pd-categoria">Estudo de caso</span>
+                    <h1 id="pd-titulo">Carregando…</h1>
+                    <p class="pd-subtitulo" id="pd-subtitulo"></p>
+                </div>
+
+                <div class="pd-tags" id="pd-tags"></div>
+
+                <div class="pd-meta">
+                    <div class="pd-meta-item">
+                        <span>Status</span>
+                        <strong id="pd-status">—</strong>
+                    </div>
+                    <div class="pd-meta-item">
+                        <span>Categoria</span>
+                        <strong id="pd-categoria-valor">—</strong>
+                    </div>
+                </div>
+
+                <div class="pd-image" id="pd-image-wrap"></div>
+
+                <div class="pd-card">
+                    <p class="pd-card-label">🎯 O objetivo</p>
+                    <p class="pd-quote" id="pd-objetivo"></p>
+                </div>
+
+                <div class="pd-card">
+                    <p class="pd-card-label">🛠️ Tecnologias core</p>
+                    <ul class="pd-tech-list" id="pd-tech-list"></ul>
+                </div>
+
+                <div class="pd-section">
+                    <h2>O desafio<span class="pd-dot">.</span></h2>
+                    <p id="pd-desafio"></p>
+                </div>
+
+                <div class="pd-section">
+                    <h2>A solução<span class="pd-dot">.</span></h2>
+                    <p id="pd-solucao"></p>
+                </div>
+
+                <div class="pd-card">
+                    <p class="pd-card-label">🏗️ Arquitetura &amp; implementação</p>
+                    <p id="pd-arquitetura"></p>
+                </div>
+
+                <div class="pd-actions" id="pd-actions"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="container">
+            <a href="index.html#hero" class="back-to-top">↑ Voltar ao topo</a>
+            <div class="footer-socials">
+                <a class="icon-circle" href="mailto:vmenegussi08@gmail.com" aria-label="E-mail"><i class="devicon-google-plain"></i></a>
+                <a class="icon-circle" href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="devicon-github-original"></i></a>
+                <a class="icon-circle" href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Vinicius Menegussi — Feito com HTML, CSS &amp; JS puro.</p>
+        </div>
+    </footer>
+
+    <!-- ═══ MODAL DE CONFIRMAÇÃO DE LINK EXTERNO ═══ -->
+    <div id="modal-link-externo" class="modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="modal-ext-titulo" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-card">
+            <button type="button" class="modal-btn-close" id="modal-ext-fechar" data-modal-close
+                aria-label="Fechar modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon-badge">
+                    <span class="modal-icon-symbol">↗</span>
+                </div>
+                <div>
+                    <h3 id="modal-ext-titulo" class="modal-titulo">Aviso de Redirecionamento</h3>
+                    <p class="modal-subtitulo" id="modal-ext-subtitulo">Você está prestes a abrir uma aba externa</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="modal-mensagem">
+                    Você será redirecionado para a aplicação em ambiente de produção:
+                </p>
+                <div class="modal-url-box">
+                    <span class="modal-url-icon">🌐</span>
+                    <span class="modal-url-texto" id="modal-ext-url-display">https://www.viewverde.com.br/</span>
+                </div>
+                <p class="modal-alerta">
+                    O link abrirá em uma nova aba mantendo seu progresso no portfólio. Tem certeza que deseja continuar?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal-cancelar" id="modal-ext-btn-cancelar"
+                    data-modal-close>Cancelar</button>
+                <button type="button" class="btn-modal-confirmar" id="modal-ext-btn-confirmar">
+                    Continuar para o site &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared/modal.js"></script>
+    <script src="shared/tech-icons.js"></script>
+    <script src="projetos-data.js"></script>
+    <script src="script.js"></script>
+    <script src="projeto.js"></script>
+</body>
+
+</html>

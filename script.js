@@ -1,369 +1,124 @@
-// ═══════════════════════════════════════════════════════════
-// PORTFÓLIO VINICIUS MENEGUSSI — JAVASCRIPT (dvlpr.pro style)
-// ═══════════════════════════════════════════════════════════
+(function () {
+    'use strict';
 
-// ─── 1. Navegação de Seções & Scroll Spy Preciso ───
-const sectionIds = ['hero', 'sobre', 'skills', 'projetos', 'contato'];
-const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-const sidebarItems = document.querySelectorAll('.sidebar-item');
-const scrollIndicator = document.getElementById('scroll-indicator');
-const scrollText = scrollIndicator.querySelector('.scroll-indicator-text');
-const scrollIcon = scrollIndicator.querySelector('.scroll-indicator-icon');
+    // ─── Menu mobile ───────────────────────────────────────
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-let secaoAtualIndex = 0;
-let projetosVisivel = false;
-let isNavigating = false;
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.textContent = isOpen ? '✕' : '☰';
+        });
 
-// Calcula com precisão qual seção está no foco visual da tela (sem pular nenhuma)
-function getSecaoAtualIndex() {
-    const scrollPos = window.scrollY + (window.innerHeight * 0.45);
-    let activeIdx = 0;
-    for (let i = 0; i < sections.length; i++) {
-        if (sections[i].offsetTop <= scrollPos) {
-            activeIdx = i;
-        }
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.textContent = '☰';
+            });
+        });
     }
-    return activeIdx;
-}
 
-function sincronizarEstadoNavegacao() {
-    const currentIdx = getSecaoAtualIndex();
-    secaoAtualIndex = currentIdx;
-    const currentId = sectionIds[currentIdx];
-    projetosVisivel = (currentId === 'projetos');
+    // ─── Link ativo conforme a seção visível ──────────────
+    const sections = document.querySelectorAll('main section[id]');
+    const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-    // Atualiza sidebar ativa
-    sidebarItems.forEach((item, idx) => {
-        if (idx === currentIdx) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
+    if (sections.length && sectionLinks.length && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    sectionLinks.forEach((link) => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+                    });
+                });
+            },
+            { rootMargin: '-45% 0px -50% 0px' }
+        );
 
-    // Atualiza indicador inferior direito
-    if (currentId === 'contato') {
-        scrollText.textContent = 'BACK TO TOP';
-        scrollIcon.innerHTML = '&uarr;';
-        scrollIndicator.setAttribute('href', '#hero');
-    } else {
-        const nextId = sectionIds[currentIdx + 1] || 'hero';
-        scrollText.textContent = 'SCROLL DOWN';
-        scrollIcon.innerHTML = '&darr;';
-        scrollIndicator.setAttribute('href', `#${nextId}`);
+        sections.forEach((section) => observer.observe(section));
     }
-}
 
-window.addEventListener('scroll', () => {
-    requestAnimationFrame(sincronizarEstadoNavegacao);
-}, { passive: true });
+    // ─── Copiar e-mail ─────────────────────────────────────
+    const btnCopiarEmail = document.getElementById('btn-copiar-email');
+    const copiarIcon = document.getElementById('copiar-icon');
 
-// Navegação suave entre seções
-function navegarSecao(direcao) {
-    if (isNavigating) return;
-    const currentIdx = getSecaoAtualIndex();
-    const destIndex = currentIdx + direcao;
-    if (destIndex < 0 || destIndex >= sectionIds.length) return;
-
-    isNavigating = true;
-    const destEl = sections[destIndex];
-    if (destEl) {
-        destEl.scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-        isNavigating = false;
-        sincronizarEstadoNavegacao();
-    }, 800);
-}
-
-// Clique nos itens da sidebar
-sidebarItems.forEach((item, idx) => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        isNavigating = true;
-        sections[idx].scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-            isNavigating = false;
-            sincronizarEstadoNavegacao();
-        }, 800);
-    });
-});
-
-// Clique no scroll indicator
-scrollIndicator.addEventListener('click', (e) => {
-    e.preventDefault();
-    const currentIdx = getSecaoAtualIndex();
-    if (currentIdx === sections.length - 1) {
-        isNavigating = true;
-        sections[0].scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-            isNavigating = false;
-            sincronizarEstadoNavegacao();
-        }, 800);
-    } else {
-        navegarSecao(+1);
-    }
-});
-
-// Atalhos de teclado (↑ / ↓ / PageUp / PageDown / ← / →)
-document.addEventListener('keydown', (e) => {
-    if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-    if (window.Modal && window.Modal.isOpen()) return;
-
-    switch (e.key) {
-        case 'ArrowDown':
-        case 'PageDown':
+    if (btnCopiarEmail) {
+        btnCopiarEmail.addEventListener('click', async (e) => {
             e.preventDefault();
-            navegarSecao(+1);
-            break;
-        case 'ArrowUp':
-        case 'PageUp':
-            e.preventDefault();
-            navegarSecao(-1);
-            break;
-        case 'ArrowRight':
-            if (projetosVisivel) {
-                e.preventDefault();
-                updateSlider(currentSlide + 1);
+            const email = 'vmenegussi08@gmail.com';
+
+            try {
+                await navigator.clipboard.writeText(email);
+            } catch (err) {
+                const temp = document.createElement('textarea');
+                temp.value = email;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand('copy');
+                document.body.removeChild(temp);
             }
-            break;
-        case 'ArrowLeft':
-            if (projetosVisivel) {
-                e.preventDefault();
-                updateSlider(currentSlide - 1);
+
+            if (copiarIcon) {
+                const original = copiarIcon.textContent;
+                copiarIcon.textContent = '✅';
+                setTimeout(() => {
+                    copiarIcon.textContent = original;
+                }, 1800);
             }
-            break;
+        });
     }
-});
 
-// ─── 2. Slider Horizontal de Projetos (dvlpr.pro style) ───
-const track = document.getElementById('slider-track');
-const slides = document.querySelectorAll('.slide-projeto');
-const prevBtn = document.getElementById('proj-prev');
-const nextBtn = document.getElementById('proj-next');
-const counterEl = document.getElementById('slide-current');
-const totalEl = document.getElementById('slide-total');
-const dotsContainer = document.querySelector('.slider-dots');
-let currentSlide = 0;
-const totalSlides = slides.length;
+    // ─── Efeito de digitação nas faixas de contato ────────
+    // Cada elemento .contact-strip-typing roda seu próprio loop,
+    // com frases vindas do atributo data-phrases (separadas por "|").
+    const typingEls = document.querySelectorAll('.contact-strip-typing');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Sincroniza contador total dinamicamente
-if (totalEl) {
-    totalEl.textContent = String(totalSlides).padStart(2, '0');
-}
+    typingEls.forEach((el, index) => {
+        const frases = (el.getAttribute('data-phrases') || 'olá!')
+            .split('|')
+            .map((f) => f.trim())
+            .filter(Boolean);
 
-// Gera dots dinamicamente baseado na quantidade de slides
-if (dotsContainer) {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        dot.className = `dot-indicator${i === 0 ? ' active' : ''}`;
-        dot.setAttribute('data-index', i);
-        dot.setAttribute('aria-label', `Ir para projeto ${i + 1}`);
-        dot.addEventListener('click', () => updateSlider(i));
-        dotsContainer.appendChild(dot);
-    }
-}
-
-function updateSlider(index) {
-    currentSlide = (index + totalSlides) % totalSlides;
-    track.style.transform = `translate3d(-${currentSlide * 100}%, 0, 0)`;
-
-    slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentSlide);
-    });
-
-    const allDots = dotsContainer ? dotsContainer.querySelectorAll('.dot-indicator') : [];
-    allDots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentSlide);
-    });
-
-    if (counterEl) {
-        counterEl.textContent = String(currentSlide + 1).padStart(2, '0');
-    }
-}
-
-if (prevBtn) prevBtn.addEventListener('click', () => updateSlider(currentSlide - 1));
-if (nextBtn) nextBtn.addEventListener('click', () => updateSlider(currentSlide + 1));
-
-// Suporte a swipe touch fluido e responsivo para celulares
-let touchStartX = 0;
-let touchStartY = 0;
-let touchDeltaX = 0;
-let touchDeltaY = 0;
-let isHorizontalGesture = false;
-let isTouching = false;
-const viewport = document.getElementById('slider-viewport');
-
-if (viewport) {
-    viewport.addEventListener('touchstart', (e) => {
-        if (e.touches.length !== 1) return;
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        touchDeltaX = 0;
-        touchDeltaY = 0;
-        isHorizontalGesture = false;
-        isTouching = true;
-    }, { passive: true });
-
-    viewport.addEventListener('touchmove', (e) => {
-        if (!isTouching || e.touches.length !== 1) return;
-        touchDeltaX = e.touches[0].clientX - touchStartX;
-        touchDeltaY = e.touches[0].clientY - touchStartY;
-
-        // Detecta se a intenção do usuário é navegar no carrossel horizontal
-        if (!isHorizontalGesture && Math.abs(touchDeltaX) > 12) {
-            if (Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.3) {
-                isHorizontalGesture = true;
-            }
-        }
-    }, { passive: true });
-
-    viewport.addEventListener('touchend', () => {
-        if (!isTouching) return;
-        isTouching = false;
-
-        // Dispara transição apenas se for gesto horizontal intencional
-        if (isHorizontalGesture && Math.abs(touchDeltaX) > 42) {
-            if (touchDeltaX < 0) {
-                updateSlider(currentSlide + 1);
-            } else {
-                updateSlider(currentSlide - 1);
-            }
-        }
-        touchDeltaX = 0;
-        touchDeltaY = 0;
-        isHorizontalGesture = false;
-    }, { passive: true });
-
-    // Navegação do slider via Scroll do Mouse / Trackpad (Desktop Web)
-    let wheelCooldown = false;
-    viewport.addEventListener('wheel', (e) => {
-        // No celular/touch, não intercepta o scroll para manter rolagem natural da página
-        if (window.innerWidth <= 768) return;
-
-        // Se estiver rolando para baixo no último slide, permite descer para contato
-        if (e.deltaY > 0 && currentSlide === totalSlides - 1) {
-            return;
-        }
-        // Se estiver rolando para cima no primeiro slide, permite subir para skills
-        if (e.deltaY < 0 && currentSlide === 0) {
+        if (reduceMotion) {
+            el.textContent = frases[0];
             return;
         }
 
-        // Determina se houve rolagem com intenção (vertical do mouse ou horizontal do trackpad)
-        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-        if (Math.abs(delta) < 18) return;
+        let fraseIndex = 0;
+        let charIndex = 0;
+        let apagando = false;
 
-        if (wheelCooldown) {
-            e.preventDefault();
-            return;
-        }
+        const tick = () => {
+            const fraseAtual = frases[fraseIndex];
+            let delay = apagando ? 35 : 65;
 
-        e.preventDefault();
-        wheelCooldown = true;
+            if (!apagando && charIndex <= fraseAtual.length) {
+                el.textContent = fraseAtual.slice(0, charIndex);
+                charIndex++;
+                if (charIndex > fraseAtual.length) {
+                    apagando = true;
+                    delay = 1800;
+                }
+            } else if (apagando && charIndex >= 0) {
+                el.textContent = fraseAtual.slice(0, charIndex);
+                charIndex--;
+                if (charIndex < 0) {
+                    apagando = false;
+                    fraseIndex = (fraseIndex + 1) % frases.length;
+                    charIndex = 0;
+                    delay = 400;
+                }
+            }
 
-        if (delta > 0) {
-            updateSlider(currentSlide + 1);
-        } else {
-            updateSlider(currentSlide - 1);
-        }
+            setTimeout(tick, delay);
+        };
 
-        // Cooldown ágil (320ms) sincronizado com a animação GPU para fluidez máxima
-        setTimeout(() => {
-            wheelCooldown = false;
-        }, 320);
-    }, { passive: false });
-
-    // Drag com mouse no slider (Desktop)
-    let mouseDown = false, mouseStartX = 0, mouseDist = 0;
-
-    viewport.addEventListener('mousedown', (e) => {
-        if (e.target.closest('a, button, .preview-mockup.is-clickable')) return;
-        mouseDown = true;
-        mouseStartX = e.clientX;
-        mouseDist = 0;
-        viewport.style.cursor = 'grabbing';
+        // pequeno atraso escalonado para as faixas não digitarem em sincronia perfeita
+        setTimeout(tick, index * 250);
     });
 
-    document.addEventListener('mouseup', () => {
-        if (!mouseDown) return;
-        mouseDown = false;
-        if (viewport) viewport.style.cursor = '';
-        if (Math.abs(mouseDist) > 60) {
-            if (mouseDist < 0) updateSlider(currentSlide + 1);
-            else updateSlider(currentSlide - 1);
-        }
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (!mouseDown) return;
-        mouseDist = e.clientX - mouseStartX;
-    });
-}
-
-// Inicialização
-sincronizarEstadoNavegacao();
-
-// ─── 4. Cópia Rápida de E-mail com Feedback Visual ───
-const btnCopiarEmail = document.getElementById('btn-copiar-email');
-const linkEmail = document.getElementById('link-email');
-const emailVinicius = 'vmenegussi08@gmail.com';
-
-function copiarEmailParaClipboard(e) {
-    if (e && e.target && e.target.closest('#btn-copiar-email')) {
-        e.preventDefault();
-    }
-
-    function darFeedback() {
-        if (!btnCopiarEmail) return;
-        const textoEl = document.getElementById('copiar-texto');
-        const iconEl = document.getElementById('copiar-icon');
-
-        btnCopiarEmail.classList.add('copiado');
-        if (textoEl) textoEl.textContent = 'Copiado!';
-        if (iconEl) iconEl.textContent = '✓';
-
-        setTimeout(() => {
-            btnCopiarEmail.classList.remove('copiado');
-            if (textoEl) textoEl.textContent = 'Copiar';
-            if (iconEl) iconEl.textContent = '📋';
-        }, 2200);
-    }
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(emailVinicius)
-            .then(darFeedback)
-            .catch(() => fallbackCopiar(emailVinicius, darFeedback));
-    } else {
-        fallbackCopiar(emailVinicius, darFeedback);
-    }
-}
-
-function fallbackCopiar(texto, callback) {
-    const tempInput = document.createElement('textarea');
-    tempInput.value = texto;
-    tempInput.style.position = 'fixed';
-    tempInput.style.left = '-9999px';
-    tempInput.style.top = '-9999px';
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    try {
-        document.execCommand('copy');
-        if (typeof callback === 'function') callback();
-    } catch (err) {
-        console.error('Falha ao copiar:', err);
-    }
-    document.body.removeChild(tempInput);
-}
-
-if (btnCopiarEmail) {
-    btnCopiarEmail.addEventListener('click', copiarEmailParaClipboard);
-}
-
-if (linkEmail) {
-    linkEmail.addEventListener('click', () => {
-        copiarEmailParaClipboard();
-    });
-}
-
+})();

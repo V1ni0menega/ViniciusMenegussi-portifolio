@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfólio de Vinicius Menegussi — Desenvolvedor Fullstack em formação pela ResTIC55">
+        content="Portfólio de Vinicius Menegussi — Desenvolvedor Fullstack em formação pela ResTIC55 e Residência Eldorado">
     <title>Vinicius Menegussi | Fullstack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shared/modal.css">
     <link rel="stylesheet" href="shared/tech-icons.css">
@@ -19,900 +23,288 @@
 
 <body>
 
-    <!-- ═══ FUNDO 3D: buraco negro (cosmos.js) ═══ -->
-    <div id="cosmos-bg" aria-hidden="true"></div>
-
     <!-- ═══ HEADER ═══ -->
     <header>
         <nav>
             <a href="#hero" class="logo">&gt;_ VM</a>
-            <a href="#contato" class="btn-contato" id="btn-nav-contato">Contato</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+            </ul>
+            <a href="#contato" class="btn-nav-contato">Contato</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button>
         </nav>
     </header>
 
-    <!-- ═══ SIDEBAR DE SEÇÕES (dvlpr.pro style) ═══ -->
-    <aside class="sidebar-nav" aria-label="Navegação por seções">
-        <div class="sidebar-track"></div>
-        <a href="#hero" class="sidebar-item active" data-section="hero"><span>00</span></a>
-        <a href="#sobre" class="sidebar-item" data-section="sobre"><span>01</span></a>
-        <a href="#skills" class="sidebar-item" data-section="skills"><span>02</span></a>
-        <a href="#projetos" class="sidebar-item" data-section="projetos"><span>03</span></a>
-        <a href="#contato" class="sidebar-item" data-section="contato"><span>04</span></a>
-    </aside>
-
-    <!-- Indicador de Scroll no canto inferior direito -->
-    <a href="#sobre" id="scroll-indicator" class="scroll-indicator" aria-label="Rolar para próxima seção">
-        <span class="scroll-indicator-text">SCROLL DOWN</span>
-        <span class="scroll-indicator-icon">&darr;</span>
-    </a>
-
     <main>
         <!-- ═══ HERO ═══ -->
-        <section id="hero">
-            <div class="hero-texto">
-                <div class="status-badge">
-                    <span class="status-ponto"></span>
-                    Disponível para novos projetos e desafios
-                </div>
-                <h1>Desenvolvedor<br><span class="accent-word">Fullstack</span><br>em formação.</h1>
-                <p class="subtitulo">Construindo interfaces modernas e back-ends robustos — módulo a módulo, sprint a
-                    sprint.</p>
-                <div class="hero-botoes">
-                    <a href="#projetos" id="btn-ver-projetos">Ver Projetos</a>
-                    <a href="./assets/curriculo-Vinicius.pdf" download id="btn-download-cv">Download CV</a>
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <div class="status-badge" style="margin-bottom:1rem;">
+                        <span class="status-dot"></span>
+                        Disponível para novos projetos e desafios
+                    </div>
+                    <p class="hero-greeting">Olá, eu sou</p>
+                    <h1>Vinicius<br>Menegussi</h1>
+                    <p class="role">Desenvolvedor Fullstack em formação</p>
+                    <div class="hero-socials">
+                        <a class="icon-circle" href="mailto:vmenegussi08@gmail.com" aria-label="E-mail" title="E-mail">
+                            <i class="devicon-google-plain"></i>
+                        </a>
+                        <a class="icon-circle" href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                            <i class="devicon-github-original"></i>
+                        </a>
+                        <a class="icon-circle" href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                            <i class="devicon-linkedin-plain"></i>
+                        </a>
+                    </div>
+                    <div class="hero-ctas">
+                        <a href="#projetos" class="btn btn-fill">Ver projetos</a>
+                        <a href="./assets/curriculo-Vinicius-Dev.pdf" download class="btn btn-outline">Download CV</a>
+                    </div>
                 </div>
             </div>
-            <div class="hero-code-wrapper">
-                <div class="code-card">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                        </div>
-                        <div class="code-tab active">⚡ developer.ts</div>
-                    </div>
-                    <div class="code-body">
-                        <pre><code><span class="cmt">// 🌐 Vinicius Menegussi — Residente Fullstack</span>
-<span class="kw">const</span> <span class="cls">developer</span> = {
-    <span class="var">nome</span>: <span class="str">"Vinicius Menegussi"</span>,
-    <span class="var">fase</span>: <span class="str">"Residente Fullstack @ BRISA/SOFTEX &amp; Eldorado"</span>,
-    <span class="var">stackAtual</span>: [
-        <span class="str">"HTML5 Semântico"</span>, <span class="str">"CSS Moderno"</span>,
-        <span class="str">"JavaScript"</span>, <span class="str">"SQL"</span>, <span class="str">"Git"</span>
-    ],
-    <span class="var">aprendendo</span>: <span class="str">"Arquitetura Web &amp; Clean Code"</span>,
-    <span class="var">disponivel</span>: <span class="kw">true</span>
-};</code></pre>
-                    </div>
-                </div>
+            <div class="hero-photo" id="hero-photo">
+                <picture>
+                    <source srcset="assets/vinicius-hero.webp" type="image/webp">
+                    <img src="assets/vinicius-hero.webp" alt="Vinicius Menegussi sorrindo, vestindo camisa listrada" width="1100" height="1466" loading="eager" decoding="async">
+                </picture>
+            </div>
+        </section>
+
+        <!-- ═══ FAIXA DE CONTATO RÁPIDO ═══ -->
+        <section class="contact-strip">
+            <div class="container">
+                <span class="contact-strip-name">&lt;Vinicius Menegussi&gt;</span>
+                <p class="contact-strip-typing" data-phrases="Sejam bem vindos!" aria-hidden="true"></p>
             </div>
         </section>
 
         <!-- ═══ SOBRE ═══ -->
-        <section id="sobre">
-            <div class="section-label">01 <span class="section-slash">// sobre</span></div>
-            <h2>Quem sou eu.</h2>
-            <div class="sobre-grid">
-                <div class="sobre-texto">
-                    <p class="sobre-lead">
-                        Minha jornada com tecnologia começou através do desenvolvimento web focado em criar aplicações funcionais. Estou em formação no <strong>Técnico em Informática para Internet</strong> e atualmente atuo no programa de <strong>Residência em TIC na BRISA/SOFTEX</strong> e na <strong>Residência FullStack 5.0 do Instituto Eldorado</strong>.
-                    </p>
-                    <p>
-                        Como desenvolvedor <strong>Full Stack em formação</strong>, trabalho em projetos ponta a ponta — desde a modelagem de banco de dados até a criação de interfaces responsivas e fluidas. Busco sempre construir softwares escaláveis, utilizando código limpo e as melhores práticas do mercado.
-                    </p>
-                    <p>
-                        Fora das linhas de código, estudo <strong>Teoria Musical e Composição</strong> de forma autodidata. Acredito que a música e os estudos que faço me ensinam sobre foco, criatividade e persistência, qualidades que levo diretamente para o meu trabalho como desenvolvedor.
-                    </p>
-                    <div class="sobre-tags">
-                        <span class="tag-pill">BRISA / SOFTEX</span>
-                        <span class="tag-pill">Instituto Eldorado</span>
-                        <span class="tag-pill">Técnico Informática</span>
-                        <span class="tag-pill">Fullstack</span>
-                        <span class="tag-pill">Clean Code</span>
-                        <span class="tag-pill">Teoria Musical</span>
-                    </div>
-                    <div class="sobre-cta">
-                        <a href="#skills" class="link-destaque">Conhecer minhas habilidades &rarr;</a>
-                    </div>
+        <section class="about" id="sobre">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Sobre mim</span>
+                    <h2>Quem sou eu.</h2>
                 </div>
-
-                <div class="sobre-cards">
-                    <div class="sobre-card">
-                        <span class="sc-badge">01 // FORMAÇÃO DE ELITE</span>
-                        <h4>Residências &amp; Técnico</h4>
-                        <p>Atuação no programa de Residência em TIC na BRISA/SOFTEX, Residência FullStack 5.0 no Instituto Eldorado e Técnico em Informática para Internet.</p>
+                <p class="about-lead">
+                    Sou desenvolvedor fullstack, com foco em construir produtos de ponta a ponta: da modelagem do banco de dados até a interface final. Gosto de interfaces modernas, código limpo e sistemas que escalam sem virar dor de cabeça. Fora das linhas de código, estudo <strong>Teoria Musical e Composição</strong> de forma autodidata — disciplina que levo direto para o meu trabalho como desenvolvedor.
+                </p>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Frontend</h3>
+                        <h4>Interfaces modernas</h4>
+                        <p>Interfaces responsivas, fluidas e acessíveis, construídas com HTML, CSS e JavaScript modernos.</p>
                     </div>
-                    <div class="sobre-card">
-                        <span class="sc-badge">02 // PONTA A PONTA</span>
-                        <h4>Desenvolvimento Full Stack</h4>
-                        <p>Atuação em projetos de ponta a ponta — desde a modelagem de bancos de dados relacionais até a criação de interfaces responsivas, fluidas e acessíveis.</p>
+                    <div class="about-card">
+                        <h3>Backend</h3>
+                        <h4>Sistemas ponta a ponta</h4>
+                        <p>Da modelagem de bancos de dados relacionais até APIs organizadas e prontas para escalar.</p>
                     </div>
-                    <div class="sobre-card">
-                        <span class="sc-badge">03 // PERFIL MULTIDISCIPLINAR</span>
-                        <h4>Teoria Musical &amp; Foco</h4>
-                        <p>Estudo autodidata de Teoria Musical e Composição, cultivando disciplina analítica, pensamento estruturado, criatividade e persistência contínua.</p>
+                    <div class="about-card">
+                        <h3>Boas práticas</h3>
+                        <h4>Código limpo &amp; foco</h4>
+                        <p>Disciplina e pensamento estruturado — qualidades que também cultivo estudando Teoria Musical.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- ═══ SKILLS (Infinite Animated Marquee) ═══ -->
-        <section id="skills">
-            <div class="skills-header">
-                <div class="section-label">02 <span class="section-slash">// habilidades</span></div>
-                <h2>O que eu sei fazer.</h2>
-                <p class="skills-subtitle">Tecnologias, ecossistemas e ferramentas que utilizo na construção de sistemas ponta a ponta.</p>
+         <section class="contact-strip">
+            <div class="container">
+                <span class="contact-strip-name">&lt;Vinicius Menegussi&gt;</span>
+                <p class="contact-strip-typing" data-phrases="construindo interfaces modernas|código limpo, sprint a sprint|full stack em formação|aberto a novos desafios da modelagem ao deploy|aprendendo todos os dias" aria-hidden="true"></p>
             </div>
+        </section>
 
-            <div class="skills-marquee-container" aria-label="Carrossel contínuo de habilidades técnicas">
-                <!-- Linha 1: Frontend & UI (Desliza para a esquerda) -->
-                <div class="skills-marquee-row" aria-label="Tecnologias Frontend">
-                    <div class="skills-marquee-track">
-                        <!-- Conjunto Original (Duplicado para preenchimento de telas largas) -->
-                        <div class="skill-icon-item">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-angularjs-plain colored"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-tailwindcss-plain colored"></i>
-                            <span>TailwindCSS</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-angularjs-plain colored"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-tailwindcss-plain colored"></i>
-                            <span>TailwindCSS</span>
-                        </div>
+        <!-- ═══ SKILLS ═══ -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Skills</span>
+                    <h2>O que eu sei fazer.</h2>
+                    <p>Tecnologias e ferramentas que utilizo na construção de sistemas ponta a ponta.</p>
+                </div>
 
-                        <!-- Clone idêntico para loop infinito 100% contínuo -->
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-angularjs-plain colored"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-tailwindcss-plain colored"></i>
-                            <span>TailwindCSS</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-angularjs-plain colored"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-tailwindcss-plain colored"></i>
-                            <span>TailwindCSS</span>
-                        </div>
+                <div class="skills-group">
+                    <p class="skills-group-label">Usando agora</p>
+                    <div class="skills-icon-grid">
+                        <div class="skill-icon-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                        <div class="skill-icon-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                        <div class="skill-icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                        <div class="skill-icon-item"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+                        <div class="skill-icon-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+                        <div class="skill-icon-item"><i class="devicon-tailwindcss-plain colored"></i><span>TailwindCSS</span></div>
                     </div>
                 </div>
 
-                <!-- Linha 2: Backend, Banco de Dados & DevOps (Desliza para a direita) -->
-                <div class="skills-marquee-row" aria-label="Tecnologias Backend e DevOps">
-                    <div class="skills-marquee-track track-reverse">
-                        <!-- Conjunto Original (Duplicado para preenchimento de telas largas) -->
-                        <div class="skill-icon-item">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-icon-item">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                        </div>
-
-                        <!-- Clone idêntico para loop infinito 100% contínuo -->
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-icon-item" aria-hidden="true">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                        </div>
+                <div class="skills-group">
+                    <p class="skills-group-label">Também utilizo</p>
+                    <div class="skills-icon-grid">
+                        <div class="skill-icon-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                        <div class="skill-icon-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                        <div class="skill-icon-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                        <div class="skill-icon-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                        <div class="skill-icon-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                        <div class="skill-icon-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
                     </div>
                 </div>
             </div>
         </section>
+         <section class="contact-strip">
+            <div class="container">
+                <span class="contact-strip-name">&gt;Vinicius Menegussi&gt;</span>
+                <p class="contact-strip-typing" data-phrases="Angular • Spring Boot • PostgreSQL|HTML • CSS • JavaScript|Docker • Git • CI/CD|sempre estudando algo novo" aria-hidden="true"></p>
+            </div>
+        </section>
 
-        <!-- ═══ PROJETOS (Showcase Slider dvlpr.pro) ═══ -->
-        <section id="projetos">
-            <div class="projetos-header">
-                <div>
-                    <div class="section-label">03 <span class="section-slash">// projetos</span></div>
+        <!-- ═══ PROJETOS ═══ -->
+        <section class="portfolio" id="projetos">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Projetos</span>
                     <h2>O que eu construí.</h2>
+                    <p>Projetos ponta a ponta desenvolvidos nas residências e por conta própria.</p>
                 </div>
-                <div class="projetos-nav-top">
-                    <span class="slide-counter"><strong id="slide-current">01</strong> / <span
-                            id="slide-total">07</span></span>
-                    <div class="slider-arrows">
-                        <button class="slider-btn prev-btn" id="proj-prev" aria-label="Projeto anterior">&larr;</button>
-                        <button class="slider-btn next-btn" id="proj-next" aria-label="Próximo projeto">&rarr;</button>
+
+                <div class="portfolio-destaque">
+                    <div class="portfolio-destaque-media">
+                        <img src="assets/1791949126229.jpeg" alt="Equipe apresentando o projeto final da Residência em TIC 55 (BRISA/SOFTEX)" loading="lazy" decoding="async">
+                    </div>
+                    <div class="portfolio-destaque-content">
+                        <span class="portfolio-destaque-tag">Residência TIC 55 · BRISA/SOFTEX</span>
+                        <h3>Prefeitura de Esteio — 3 sistemas entregues em equipe</h3>
+                        <p>Durante a residência, desenvolvemos em equipe três sistemas integrados para a Prefeitura Municipal de Esteio/RS, apresentados na banca final.</p>
+                        <div class="portfolio-destaque-lista">
+                            <a class="portfolio-destaque-item" href="projeto.html?id=portal-pma">
+                                <img src="assets/pma-preview.webp" alt="" loading="lazy">
+                                <span class="portfolio-destaque-item-info">
+                                    <span class="portfolio-destaque-item-tag">Angular + Spring Boot</span>
+                                    <span class="portfolio-destaque-item-titulo">Portal PMA — acesso interno dos colaboradores</span>
+                                </span>
+                                <span class="portfolio-destaque-item-seta">&rarr;</span>
+                            </a>
+                            <a class="portfolio-destaque-item" href="projeto.html?id=painel-esteio">
+                                <img src="assets/painel-preview.webp" alt="" loading="lazy">
+                                <span class="portfolio-destaque-item-info">
+                                    <span class="portfolio-destaque-item-tag">Angular + Spring Boot</span>
+                                    <span class="portfolio-destaque-item-titulo">Painel Público — serviços para os munícipes</span>
+                                </span>
+                                <span class="portfolio-destaque-item-seta">&rarr;</span>
+                            </a>
+                            <a class="portfolio-destaque-item" href="projeto.html?id=viewverde">
+                                <img src="assets/viewverde-pre-view.webp" alt="" loading="lazy">
+                                <span class="portfolio-destaque-item-info">
+                                    <span class="portfolio-destaque-item-tag">Eleventy (11ty)</span>
+                                    <span class="portfolio-destaque-item-titulo">ViewVerde — plataforma de dados ambientais</span>
+                                </span>
+                                <span class="portfolio-destaque-item-seta">&rarr;</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="slider-viewport" id="slider-viewport">
-                <div class="slider-track" id="slider-track">
+                <div class="portfolio-grid">
 
-                    <!-- Slide 1: Portal PMA -->
-                    <article class="slide-projeto active" data-index="0" id="card-portal-pma">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">Portal PMA — Prefeitura de Esteio</h3>
-                            <p class="slide-descricao">
-                                Portal administrativo que digitalizou o acesso a serviços municipais para os
-                                colaboradores de iniciativa publica da Prefeitura Municipal de Esteio/RS.
-                                Desenvolvido com arquitetura moderna e escalável, resolvendo uma dor real da
-                                administração.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>Angular</li>
-                                        <li>Angular Material</li>
-                                        <li>Google icons</li>
-                                        <li>TypeScript</li>
-                                        <li>TailwindCSS</li>
-                                        <li>HTML Semântico</li>
-                                        <li>CSS Moderno</li>
-                                        <li>WCAG AA</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Backend</span>
-                                        <li>Java 25</li>
-                                        <li>Spring Boot 3</li>
-                                        <li>Docker</li>
-                                        <li>PostgreSQL</li>
-                                        <li>REST APIs</li>
-                                        <li>JPA</li>
-                                        <li>Hibernate</li>
-                                        <li>JUnit 5</li>
-                                        <li>Mockito</li>
-                                        <li>Swagger</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-pma">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Produção / Nuvem
-                                </span>
-                            </div>
+                    <a class="portfolio-card" href="projeto.html?id=gitquest">
+                        <picture>
+                            <source srcset="assets/gitquest-preview.webp" type="image/webp">
+                            <img src="assets/gitquest-preview.webp" alt="Interface do GitQuest - RPG do Git" loading="lazy" decoding="async" width="1350" height="657">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Vanilla JS</span>
+                            <span class="portfolio-title">GitQuest — Plataforma Educacional Gamificada</span>
                         </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://admin.viewverde.com.br/login?returnUrl=%2F"
-                                data-project-name="Portal PMA - Prefeitura de Esteio">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">admin.viewverde.com.br/login</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/pma-preview.webp" type="image/webp">
-                                        <img src="assets/pma-preview.webp"
-                                            alt="Interface real do sistema ViewVerde PMA - Prefeitura Municipal de Esteio"
-                                            class="mockup-img" loading="eager" decoding="async" width="1024"
-                                            height="495" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    </a>
 
-                    <!-- Slide 2: ViewVerde -->
-                    <article class="slide-projeto" data-index="1" id="card-viewverde">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">ViewVerde</h3>
-                            <p class="slide-descricao">
-                                Plataforma institucional de dados ambientais com 4 módulos de monitoramento sustentável.
-                                Desenvolvida com Eleventy (11ty), garantindo alta velocidade de carregamento,
-                                acessibilidade padrão WCAG AA e parceria estratégica entre Esteio, Unisinos e Dell.
-                                </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>Nunjucks</li>
-                                        <li>Eleventy (11ty)</li>
-                                        <li>HTML5</li>
-                                        <li>CSS Vanilla</li>
-                                        <li>JavaScript</li>
-                                        <li>WCAG AA</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-viewverde">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Produção / Nuvem
-                                </span>
-                            </div>
+                    <a class="portfolio-card" href="projeto.html?id=linkedin-ai">
+                        <div class="portfolio-card-fallback">
+                            <i class="devicon-python-plain colored"></i>
                         </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable" data-external-url="https://www.viewverde.com.br/"
-                                data-project-name="ViewVerde">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">www.viewverde.com.br</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/viewverde-pre-view.webp" type="image/webp">
-                                        <img src="assets/viewverde-pre-view.webp"
-                                            alt="Interface real da plataforma ViewVerde - Plataforma Ambiental"
-                                            class="mockup-img" loading="lazy" decoding="async" width="1348"
-                                            height="655" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">Python + Gemini AI</span>
+                            <span class="portfolio-title">LinkedIn AI Post Generator</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <!-- Slide 3: Painel Público Esteio -->
-                    <article class="slide-projeto" data-index="2" id="card-painel-esteio">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">Painel Público — Prefeitura de Esteio</h3>
-                            <p class="slide-descricao">
-                                Portal público que digitalizou o acesso a serviços municipais para os munícipes de
-                                Esteio/RS. Desenvolvido com arquitetura moderna e escalável, resolvendo uma dor real da
-                                administração pública e agilizando processos com eficiência.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>Angular</li>
-                                        <li>Angular Material</li>
-                                        <li>Google icons</li>
-                                        <li>TypeScript</li>
-                                        <li>TailwindCSS</li>
-                                        <li>HTML Semântico</li>
-                                        <li>CSS Moderno</li>
-                                        <li>WCAG AA</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Backend</span>
-                                        <li>Java 25</li>
-                                        <li>Spring Boot 3</li>
-                                        <li>Docker</li>
-                                        <li>PostgreSQL</li>
-                                        <li>REST APIs</li>
-                                        <li>JPA</li>
-                                        <li>Hibernate</li>
-                                        <li>JUnit 5</li>
-                                        <li>Mockito</li>
-                                        <li>Swagger</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                                    class="btn-projeto-primary" id="link-github-painel">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Produção / Nuvem
-                                </span>
-                            </div>
+                    <a class="portfolio-card" href="projeto.html?id=dev-dock">
+                        <picture>
+                            <source srcset="assets/dev-dock-preview.webp" type="image/webp">
+                            <img src="assets/dev-dock-preview.webp" alt="Interface do Dev Dock - Suíte de Terminal" loading="lazy" decoding="async" width="1341" height="662">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">React 19 + Vite</span>
+                            <span class="portfolio-title">Dev Dock — Suíte de Terminal</span>
                         </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://painel.viewverde.com.br/"
-                                data-project-name="Painel Público Esteio">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">painel.viewverde.com.br</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/painel-preview.webp" type="image/webp">
-                                        <img src="assets/painel-preview.webp"
-                                            alt="Interface real do Painel Público - Prefeitura de Esteio"
-                                            class="mockup-img" loading="lazy" decoding="async" width="1350"
-                                            height="657" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    </a>
 
-                    <!-- Slide 4: GITQUEST -->
-                    <article class="slide-projeto" data-index="3" id="card-api-gateway">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">GitQuest - Plataforma Educacional Gamificada</h3>
-                            <p class="slide-descricao">
-                                Plataforma educacional gamificada para conectar mentores e estudantes. Desenvolvida em
-                                tempo recorde durante a Residência TIC Softex, integra desafios, recompensas, rankings
-                                e trilhas de aprendizagem, incentivando o engajamento e o desenvolvimento profissional
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>Git</li>
-                                        <li>HTML5</li>
-                                        <li>CSS3 Moderno</li>
-                                        <li>JavaScript Vanilla (ES6+)</li>
-                                        <li>WCAG AA</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega/GitQuest" target="_blank"
-                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-gateway">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Arquitetura Cloud | RPG do Git
-                                </span>
-                            </div>
+                    <a class="portfolio-card" href="projeto.html?id=projeto-login">
+                        <picture>
+                            <source srcset="assets/projeto-login-preview.webp" type="image/webp">
+                            <img src="assets/projeto-login-preview.webp" alt="Interface do Projeto Login" loading="lazy" decoding="async" width="1341" height="662">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-tag">HTML / CSS / JS</span>
+                            <span class="portfolio-title">Projeto Login — Autenticação</span>
                         </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://gitquest-nu.vercel.app"
-                                data-project-name="GitQuest">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">gitquest-nu.vercel.app</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/gitquest-preview.webp" type="image/webp">
-                                        <img src="assets/gitquest-preview.webp"
-                                            alt="Interface real do GitQuest - RPG do Git" class="mockup-img"
-                                            loading="lazy" decoding="async" width="1000" height="500" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 5: LinkedIn AI Post Generator -->
-                    <article class="slide-projeto" data-index="4" id="card-linkedin-ai">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">LinkedIn AI Post Generator</h3>
-                            <p class="slide-descricao">
-                                Assistente inteligente em Python projetado para desenvolvedores transformarem notas,
-                                tarefas diárias, commits ou resumos de aulas em postagens maduras, profissionais e
-                                reflexivas para o LinkedIn, utilizando a API oficial do Gemini 3.7 Flash.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend &amp; UI</span>
-                                        <li>Streamlit</li>
-                                        <li>Terminal CLI</li>
-                                        <li>Python</li>
-                                        <li>UX Conversacional</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Backend &amp; IA</span>
-                                        <li>Gemini 3.7 Flash</li>
-                                        <li>Google AI SDK</li>
-                                        <li>Prompt Engineering</li>
-                                        <li>Token Economy</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega/LinkedIn-posts" target="_blank"
-                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-linkedin-ai">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Gemini 3.7 Flash • Sub-segundo
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://github.com/V1ni0menega/LinkedIn-posts"
-                                data-project-name="LinkedIn AI Post Generator">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">github.com/V1ni0menega/LinkedIn-posts</span>
-                                    <span class="mockup-live-tag">● Gemini AI</span>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-badge green">● Geração Ultrarrápida (&lt; 1s)</div>
-                                    <h4>Controles Modulares &amp; IA</h4>
-                                    <div class="mockup-grid">
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">4 Tons</span>
-                                            <span class="stat-txt">Técnico • Casual • Story</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">3 Níveis</span>
-                                            <span class="stat-txt">Economia de Tokens</span>
-                                        </div>
-                                        <div class="mockup-stat">
-                                            <span class="stat-num">2 UIs</span>
-                                            <span class="stat-txt">Streamlit + CLI</span>
-                                        </div>
-                                    </div>
-                                    <div class="mockup-code-line">&gt; python app.py --model gemini-3.7-flash --auto-save</div>
-                                </div>
-                                <div class="mockup-screen-overlay">
-                                    <span class="mockup-overlay-badge">
-                                        <span>Ver no GitHub</span> &nearr;
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 6: Dev Dock -->
-                    <article class="slide-projeto" data-index="5" id="card-dev-dock">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">Dev Dock — Suíte de Terminal &amp; Produtividade</h3>
-                            <p class="slide-descricao">
-                                Suíte interativa de produtividade e ambiente prático de aprendizado de comandos de
-                                terminal e Git para desenvolvedores. Construída com React 19, Vite e Tailwind CSS,
-                                proporcionando visualização reativa de comandos e alta velocidade.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>React 19.2</li>
-                                        <li>Vite 8.0</li>
-                                        <li>Tailwind 4.2</li>
-                                        <li>Lucide React</li>
-                                        <li>React Icons</li>
-                                        <li>ESLint 9.39</li>
-                                    </div>
-                                    <div class="stacks-back">
-                                        <span>Ferramentas &amp; CLI</span>
-                                        <li>Git</li>
-                                        <li>Terminal Linux</li>
-                                        <li>Shell Script</li>
-                                        <li>Dev Server HMR</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega/comandos-uteis-manual" target="_blank"
-                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-devdock">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> React 19 + Vite
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://comandos-uteis-manual-puce.vercel.app/"
-                                data-project-name="Dev Dock">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">comandos-uteis-manual-puce.vercel.app</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/dev-dock-preview.webp" type="image/webp">
-                                        <img src="assets/dev-dock-preview.webp"
-                                            alt="Interface real do Dev Dock - Suíte de Terminal &amp; Produtividade" class="mockup-img"
-                                            loading="lazy" decoding="async" width="1341" height="662" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Slide 7: Projeto Login -->
-                    <article class="slide-projeto" data-index="6" id="card-projeto-login">
-                        <div class="slide-conteudo">
-                            <h3 class="slide-titulo">Projeto Login — Interface Moderna de Autenticação</h3>
-                            <p class="slide-descricao">
-                                Interface de autenticação e tela de acesso de usuários desenvolvida com foco nos
-                                fundamentos essenciais da web: HTML5 semântico, estilização avançada em CSS3
-                                (Glassmorphism, Flexbox, gradientes modernos), validação de campos e total responsividade.
-                            </p>
-                            <div class="slide-stack">
-                                <span class="stack-label">Construído com:</span>
-                                <ul>
-                                    <div class="stacks-front">
-                                        <span>Frontend</span>
-                                        <li>HTML5 Semântico</li>
-                                        <li>CSS3 Moderno</li>
-                                        <li>Glassmorphism</li>
-                                        <li>JavaScript Vanilla</li>
-                                        <li>Design Responsivo</li>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="slide-acoes">
-                                <a href="https://github.com/V1ni0menega/Projeto-login" target="_blank"
-                                    rel="noopener noreferrer" class="btn-projeto-primary" id="link-github-projeto-login">
-                                    Ver no GitHub &rarr;
-                                </a>
-                                <span class="badge-status-producao">
-                                    <span class="status-ponto"></span> Vanilla Web
-                                </span>
-                            </div>
-                        </div>
-                        <div class="slide-preview">
-                            <div class="preview-mockup is-clickable"
-                                data-external-url="https://projeto-login-peach-phi.vercel.app"
-                                data-project-name="Projeto Login">
-                                <div class="mockup-bar">
-                                    <div class="mockup-dots">
-                                        <span class="m-dot dot-red"></span>
-                                        <span class="m-dot dot-yellow"></span>
-                                        <span class="m-dot dot-green"></span>
-                                    </div>
-                                    <span class="mockup-url">projeto-login-peach-phi.vercel.app</span>
-                                    <span class="mockup-live-tag">● Live</span>
-                                </div>
-                                <div class="mockup-screen">
-                                    <picture>
-                                        <source srcset="assets/projeto-login-preview.webp" type="image/webp">
-                                        <img src="assets/projeto-login-preview.webp"
-                                            alt="Interface real do Projeto Login - Página de Autenticação" class="mockup-img"
-                                            loading="lazy" decoding="async" width="1341" height="662" />
-                                    </picture>
-                                    <div class="mockup-screen-overlay">
-                                        <span class="mockup-overlay-badge">
-                                            <span>Acessar aplicação</span> &nearr;
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    </a>
 
                 </div>
-            </div>
-
-            <!-- Dots de navegação inferior -->
-            <div class="slider-dots">
-                <button class="dot-indicator active" data-index="0" aria-label="Ir para projeto 1"></button>
-                <button class="dot-indicator" data-index="1" aria-label="Ir para projeto 2"></button>
-                <button class="dot-indicator" data-index="2" aria-label="Ir para projeto 3"></button>
-                <button class="dot-indicator" data-index="3" aria-label="Ir para projeto 4"></button>
-                <button class="dot-indicator" data-index="4" aria-label="Ir para projeto 5"></button>
-                <button class="dot-indicator" data-index="5" aria-label="Ir para projeto 6"></button>
-                <button class="dot-indicator" data-index="6" aria-label="Ir para projeto 7"></button>
             </div>
         </section>
 
         <!-- ═══ CONTATO ═══ -->
-        <section id="contato">
-            <div class="contato-conteudo">
-                <div class="section-label">04 <span class="section-slash">// contato</span></div>
-                <h2>Vamos conversar.</h2>
-                <p class="contato-subtitulo">Aberto a oportunidades, conexões técnicas e novos desafios de
-                    desenvolvimento.</p>
-                <address>
-                    <a href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer"
-                        id="link-github-contato">
-                        <i class="devicon-github-original"></i> GitHub
+        <section class="contact" id="contato">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Contato</span>
+                    <h2>Ficou interessado?</h2>
+                    <h3>Vamos troca uma ideia!</h3>
+                    <p>Aberto a oportunidades, conexões técnicas e novos desafios de desenvolvimento.</p>
+                </div>
+                <div class="contact-links">
+                    <a class="contact-link-card" href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer">
+                        <span class="icon-circle"><i class="devicon-github-original"></i></span>
+                        <span class="contact-link-text">
+                            <span>GitHub</span>
+                            <span>V1ni0menega</span>
+                        </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank"
-                        rel="noopener noreferrer" id="link-linkedin">
-                        <i class="devicon-linkedin-plain"></i> LinkedIn
+                    <a class="contact-link-card" href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer">
+                        <span class="icon-circle"><i class="devicon-linkedin-plain"></i></span>
+                        <span class="contact-link-text">
+                            <span>LinkedIn</span>
+                            <span>vinicius-menegussi-dev</span>
+                        </span>
                     </a>
-                    <div class="email-container">
-                        <a href="mailto:vmenegussi08@gmail.com" id="link-email" title="Enviar e-mail">
-                            <i class="devicon-google-plain"></i> vmenegussi08@gmail.com
+                    <div class="contact-link-card" id="email-card">
+                        <span class="icon-circle"><i class="devicon-google-plain"></i></span>
+                        <a class="contact-link-text" href="mailto:vmenegussi08@gmail.com" id="link-email">
+                            <span>E-mail</span>
+                            <span>vmenegussi08@gmail.com</span>
                         </a>
-                        <button type="button" class="btn-copiar-email" id="btn-copiar-email" title="Copiar e-mail"
-                            aria-label="Copiar endereço de e-mail">
-                            <span class="copiar-icon" id="copiar-icon">📋</span>
-                            <span class="copiar-texto" id="copiar-texto">Copiar</span>
+                        <button type="button" class="btn-copiar-email" id="btn-copiar-email" title="Copiar e-mail" aria-label="Copiar endereço de e-mail">
+                            <span id="copiar-icon">📋</span>
                         </button>
                     </div>
-                </address>
-            </div>
-            <div class="contato-footer">
-                <p>© 2026 Vinicius Menegussi &mdash; Feito com HTML, CSS &amp; JS puro.</p>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="container">
+            <a href="#hero" class="back-to-top">↑ Voltar ao topo</a>
+            <div class="footer-socials">
+                <a class="icon-circle" href="mailto:vmenegussi08@gmail.com" aria-label="E-mail"><i class="devicon-google-plain"></i></a>
+                <a class="icon-circle" href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="devicon-github-original"></i></a>
+                <a class="icon-circle" href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Vinicius Menegussi — Feito com HTML, CSS &amp; JS puro.</p>
+        </div>
+    </footer>
 
     <!-- ═══ MODAL DE CONFIRMAÇÃO DE LINK EXTERNO ═══ -->
     <div id="modal-link-externo" class="modal-overlay" role="dialog" aria-modal="true"
@@ -955,7 +347,6 @@
     <script src="shared/modal.js"></script>
     <script src="shared/tech-icons.js"></script>
     <script src="script.js"></script>
-    <script type="module" src="cosmos.js"></script>
 </body>
 
 </html>
