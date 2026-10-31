@@ -31,6 +31,7 @@
                 <li><a href="#sobre">Sobre mim</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projetos">Projetos</a></li>
+                <li class="nav-contact-bar"><a href="#contato">Contato</a></li>
             </ul>
             <a href="#contato" class="btn-nav-contato">Contato</a>
             <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button>
@@ -40,6 +41,40 @@
     <main>
         <!-- ═══ HERO ═══ -->
         <section class="hero" id="hero">
+            <!-- Hero mobile: foto cheia com texto sobreposto, centralizado -->
+            <div class="hero-mobile-stage">
+                <img src="assets/hero-celular.png" alt="Estátua de Sócrates pensativo" class="hero-mobile-bg">
+                <div class="hero-mobile-overlay">
+                    <h1 class="hero-mobile-role">Critical Thinking Developer</h1>
+                    <p class="hero-mobile-greeting">Building Better Decisions Through Logic</p>
+                    <svg class="hero-mobile-divider" viewBox="0 0 60 12" aria-hidden="true">
+                        <path d="M0 6 Q7.5 0 15 6 T30 6 T45 6 T60 6" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    <div class="hero-mobile-socials">
+                        <a class="icon-circle" href="mailto:vmenegussi08@gmail.com" aria-label="E-mail" title="E-mail">
+                            <i class="devicon-google-plain"></i>
+                        </a>
+                        <a class="icon-circle" href="https://github.com/V1ni0menega" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                            <i class="devicon-github-original"></i>
+                        </a>
+                        <a class="icon-circle" href="https://www.linkedin.com/in/vinicius-menegussi-dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                            <i class="devicon-linkedin-plain"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-mobile-footer">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Disponível para novos projetos e desafios
+                </div>
+                <div class="hero-ctas">
+                    <a href="#projetos" class="btn btn-fill">Ver projetos</a>
+                    <a href="./assets/curriculo-Vinicius-Dev.pdf" download class="btn btn-outline">Download CV</a>
+                </div>
+            </div>
+
+            <!-- Hero desktop: layout original com corte diagonal -->
             <div class="container">
                 <div class="hero-text">
                     <div class="status-badge" style="margin-bottom:1rem;">
@@ -170,7 +205,7 @@
 
                 <div class="portfolio-destaque">
                     <div class="portfolio-destaque-media">
-                        <img src="assets/1791949126229.jpeg" alt="Equipe apresentando o projeto final da Residência em TIC 55 (BRISA/SOFTEX)" loading="lazy" decoding="async">
+                        <img src="assets/projeto-viewverde.jpeg" alt="Equipe apresentando o projeto final da Residência em TIC 55 (BRISA/SOFTEX)" loading="lazy" decoding="async">
                     </div>
                     <div class="portfolio-destaque-content">
                         <span class="portfolio-destaque-tag">Residência TIC 55 · BRISA/SOFTEX</span>
